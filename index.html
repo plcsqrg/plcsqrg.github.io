@@ -57,6 +57,12 @@
             color: #C96F78;
         }
 
+        .menu-toggle {
+   
+            display: none;
+
+        }
+
         /* INSTAGRAM */
 
         .instagram {
@@ -301,6 +307,38 @@
 
         @media (max-width: 850px) {
 
+            .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+nav {
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+}
+
+nav.open {
+    display: flex;
+}
+
+            .menu-toggle {
+    display: block;
+}
+
+nav {
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+}
+
+nav.open {
+    display: flex;
+}
+
             header {
                 flex-direction: column;
                 gap: 20px;
@@ -357,6 +395,12 @@
     </style>
 </head>
 
+    <script>
+function toggleMenu() {
+    document.querySelector("nav").classList.toggle("open");
+}
+</script>
+
 <body>
 
     <!-- MENÚ -->
@@ -366,6 +410,8 @@
         <a href="index.html" class="logo">
             Pilar Casquero Gilabert
         </a>
+        
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
         <nav>
             <a href="obras.html">Obras</a>
