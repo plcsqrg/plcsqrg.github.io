@@ -6,7 +6,7 @@
 
     <title>Pilar Casquero Gilabert | Pintura contemporánea</title>
 
-    <meta name="description" content="Sara Heni Guans. Pintura contemporánea entre lo real, lo imaginado y lo imperceptible.">
+    <meta name="description" content="Pilar Casquero Gilabert. Pintura contemporánea. Una exploración de lo perceptible y lo imperceptible a través de la pintura.">
 
     <style>
         * {
@@ -17,8 +17,8 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            color: #252525;
-            background: #f8f6f2;
+            color: #3b292d;
+            background: #ead9dc;
             line-height: 1.6;
         }
 
@@ -27,123 +27,150 @@
             text-decoration: none;
         }
 
-        /* ---------- MENÚ ---------- */
+        /* MENÚ */
 
         header {
             width: 100%;
-            padding: 28px 5%;
+            padding: 25px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #dedbd5;
-            background: #f8f6f2;
+            border-bottom: 1px solid #d2b9bd;
+            background: #ead9dc;
+            position: relative;
         }
 
         .logo {
             font-family: Georgia, serif;
-            font-size: 1.5rem;
-            letter-spacing: 0.03em;
+            font-size: 1.35rem;
+            letter-spacing: 0.02em;
         }
 
         nav {
             display: flex;
+            align-items: center;
             gap: 28px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
 
         nav a:hover {
             opacity: 0.55;
         }
 
-        /* ---------- PORTADA ---------- */
+        /* INSTAGRAM */
+
+        .instagram {
+            width: 23px;
+            height: 23px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 5px;
+        }
+
+        .instagram svg {
+            width: 21px;
+            height: 21px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.7;
+        }
+
+        /* PORTADA */
 
         .hero {
-            min-height: 75vh;
+            min-height: 78vh;
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 6%;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 7%;
             align-items: center;
             padding: 70px 7%;
         }
 
         .hero-text {
-            max-width: 500px;
+            max-width: 560px;
         }
 
         .small-title {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
             margin-bottom: 22px;
-            color: #777;
+            color: #765d62;
         }
 
         h1 {
             font-family: Georgia, serif;
-            font-size: clamp(3rem, 6vw, 6rem);
+            font-size: clamp(3.2rem, 6vw, 6rem);
             font-weight: normal;
-            line-height: 1;
+            line-height: 1.02;
             margin-bottom: 30px;
         }
 
         .hero-text p {
-            font-size: 1.1rem;
-            max-width: 450px;
-            color: #555;
+            font-family: Georgia, serif;
+            font-size: 1.15rem;
+            max-width: 500px;
+            color: #634d52;
             margin-bottom: 35px;
         }
 
         .button {
             display: inline-block;
-            padding: 13px 25px;
-            border: 1px solid #252525;
-            font-size: 0.85rem;
-            transition: 0.2s;
+            padding: 12px 24px;
+            border: 1px solid #513b40;
+            font-size: 0.82rem;
+            transition: 0.25s;
         }
 
         .button:hover {
-            background: #252525;
-            color: white;
+            background: #513b40;
+            color: #ead9dc;
         }
 
         .hero-image {
             height: 600px;
-            background: #e6d7d5;
+            background: #d9bfc4;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #777;
+            color: #80686d;
             font-family: Georgia, serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
-        /* ---------- SECCIONES ---------- */
+        /* SECCIONES */
 
         section {
-            padding: 90px 7%;
+            padding: 100px 7%;
         }
 
         .section-title {
             font-family: Georgia, serif;
-            font-size: 2.5rem;
+            font-size: 2.7rem;
             font-weight: normal;
-            margin-bottom: 45px;
+            margin-bottom: 40px;
         }
 
         .intro {
-            max-width: 700px;
+            max-width: 720px;
             font-family: Georgia, serif;
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             line-height: 1.5;
             margin-bottom: 60px;
+            color: #5c474c;
         }
 
-        /* ---------- OBRAS ---------- */
+        /* OBRAS */
+
+        #obras {
+            background: #f0e2e3;
+        }
 
         .works {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            gap: 28px;
         }
 
         .work {
@@ -152,11 +179,11 @@
 
         .work-image {
             aspect-ratio: 1 / 1;
-            background: #e3dfda;
+            background: #d8c0c4;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #777;
+            color: #80686d;
             font-family: Georgia, serif;
             margin-bottom: 15px;
         }
@@ -168,49 +195,52 @@
         }
 
         .work p {
-            font-size: 0.85rem;
-            color: #777;
+            font-size: 0.82rem;
+            color: #80686d;
         }
 
         .all-works {
             margin-top: 45px;
         }
 
-        /* ---------- CATEGORÍAS ---------- */
+        /* CATEGORÍAS */
 
         .categories {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: #ccc8c0;
-            border: 1px solid #ccc8c0;
+            gap: 20px;
         }
 
         .category {
-            min-height: 220px;
-            background: #f8f6f2;
-            padding: 35px;
+            min-height: 230px;
+            background: #dfc9cd;
+            padding: 32px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            transition: 0.25s;
+        }
+
+        .category:hover {
+            background: #d4b8be;
         }
 
         .category h3 {
             font-family: Georgia, serif;
-            font-size: 1.5rem;
+            font-size: 1.55rem;
             font-weight: normal;
             margin-bottom: 8px;
         }
 
         .category p {
-            color: #777;
-            font-size: 0.9rem;
+            color: #725b60;
+            font-size: 0.88rem;
         }
 
-        /* ---------- SOBRE MÍ ---------- */
+        /* SOBRE MÍ */
 
         .about {
-            background: #ebe6e0;
+            background: #e4ced1;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10%;
@@ -219,11 +249,11 @@
 
         .about-image {
             height: 450px;
-            background: #d8d1ca;
+            background: #cfb4b9;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #777;
+            color: #80686d;
             font-family: Georgia, serif;
         }
 
@@ -233,9 +263,10 @@
 
         .about-text p {
             margin-bottom: 25px;
+            color: #594449;
         }
 
-        /* ---------- ENCARGOS ---------- */
+        /* ENCARGOS */
 
         .commissions {
             text-align: center;
@@ -245,29 +276,29 @@
 
         .commissions p {
             margin-bottom: 30px;
-            color: #555;
+            color: #634d52;
         }
 
-        /* ---------- FOOTER ---------- */
+        /* PIE */
 
         footer {
-            padding: 50px 7%;
-            border-top: 1px solid #dedbd5;
+            padding: 45px 7%;
+            border-top: 1px solid #d2b9bd;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
-            color: #777;
+            font-size: 0.78rem;
+            color: #765d62;
         }
 
         .social {
             display: flex;
-            gap: 20px;
+            align-items: center;
         }
 
-        /* ---------- MÓVIL ---------- */
+        /* MÓVIL */
 
-        @media (max-width: 800px) {
+        @media (max-width: 850px) {
 
             header {
                 flex-direction: column;
@@ -286,7 +317,7 @@
             }
 
             .hero-image {
-                height: 400px;
+                height: 450px;
             }
 
             .works {
@@ -308,7 +339,7 @@
             }
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 520px) {
 
             .works {
                 grid-template-columns: 1fr;
@@ -317,10 +348,13 @@
             h1 {
                 font-size: 3.2rem;
             }
+
+            section {
+                padding: 70px 6%;
+            }
         }
     </style>
 </head>
-
 
 <body>
 
@@ -329,15 +363,26 @@
     <header>
 
         <a href="index.html" class="logo">
-            Sara Heni Guans
+            Pilar Casquero Gilabert
         </a>
 
         <nav>
-            <a href="#obras">Obras</a>
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#exposiciones">Exposiciones</a>
-            <a href="#encargos">Encargos</a>
-            <a href="#contacto">Contacto</a>
+            <a href="obras.html">Obras</a>
+            <a href="exposiciones.html">Exposiciones</a>
+            <a href="sobre-mi.html">Sobre mí</a>
+            <a href="encargos.html">Encargos</a>
+            <a href="contacto.html">Contacto</a>
+
+            <!-- Instagram -->
+            <a href="#" class="instagram" aria-label="Instagram">
+
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+
+            </a>
         </nav>
 
     </header>
@@ -356,16 +401,16 @@
                 </div>
 
                 <h1>
-                    Entre lo real y lo imaginado.
+                    Hacer visible lo imperceptible.
                 </h1>
 
                 <p>
-                    Una exploración pictórica de la percepción,
-                    la memoria, las emociones y aquellos espacios
-                    que existen entre lo visible y lo imperceptible.
+                    Mi pintura parte de la percepción de lo visible
+                    para explorar aquello que no siempre puede verse:
+                    sensaciones, memoria, emociones, sueños y energía.
                 </p>
 
-                <a href="#obras" class="button">
+                <a href="obras.html" class="button">
                     Ver obras
                 </a>
 
@@ -392,61 +437,49 @@
             </h2>
 
             <p class="intro">
-                Una selección de trabajos figurativos, abstractos
-                y obras desarrolladas a partir de diferentes
-                experiencias y lugares.
+                Una selección de mi producción pictórica,
+                entre la figuración, la abstracción y la exploración
+                de diferentes experiencias y sensaciones.
             </p>
 
 
             <div class="works">
 
-                <a href="#" class="work">
+                <a href="obras/obra1.html" class="work">
 
                     <div class="work-image">
                         obra1.jpg
                     </div>
 
-                    <h3>
-                        Obra 01
-                    </h3>
+                    <h3>Obra 01</h3>
 
-                    <p>
-                        TFG · Figurativa
-                    </p>
+                    <p>Figuración</p>
 
                 </a>
 
 
-                <a href="#" class="work">
+                <a href="obras/obra2.html" class="work">
 
                     <div class="work-image">
                         obra2.jpg
                     </div>
 
-                    <h3>
-                        Obra 02
-                    </h3>
+                    <h3>Obra 02</h3>
 
-                    <p>
-                        TFG · Abstracta
-                    </p>
+                    <p>Abstracción</p>
 
                 </a>
 
 
-                <a href="#" class="work">
+                <a href="obras/obra3.html" class="work">
 
                     <div class="work-image">
                         obra3.jpg
                     </div>
 
-                    <h3>
-                        Obra 03
-                    </h3>
+                    <h3>Obra 03</h3>
 
-                    <p>
-                        Colombia
-                    </p>
+                    <p>Otras obras</p>
 
                 </a>
 
@@ -454,7 +487,7 @@
 
 
             <div class="all-works">
-                <a href="#" class="button">
+                <a href="obras.html" class="button">
                     Ver todas las obras
                 </a>
             </div>
@@ -464,76 +497,34 @@
 
         <!-- CATEGORÍAS -->
 
-        <section id="exposiciones">
+        <section>
 
             <div class="small-title">
-                Colecciones
+                Obra
             </div>
 
             <h2 class="section-title">
-                Explorar obra
+                Explorar
             </h2>
 
 
             <div class="categories">
 
-                <a href="#" class="category">
-                    <h3>
-                        TFG · Figurativas
-                    </h3>
-                    <p>
-                        España y Francia
-                    </p>
+                <a href="obras.html#figuracion" class="category">
+                    <h3>Figuración</h3>
+                    <p>Obras figurativas y representacionales</p>
                 </a>
 
 
-                <a href="#" class="category">
-                    <h3>
-                        TFG · Abstractas
-                    </h3>
-                    <p>
-                        España y Francia
-                    </p>
+                <a href="obras.html#abstraccion" class="category">
+                    <h3>Abstracción</h3>
+                    <p>Color, materia, luz y percepción</p>
                 </a>
 
 
-                <a href="#" class="category">
-                    <h3>
-                        Colombia
-                    </h3>
-                    <p>
-                        Obras realizadas a partir de este contexto
-                    </p>
-                </a>
-
-
-                <a href="#" class="category">
-                    <h3>
-                        España
-                    </h3>
-                    <p>
-                        Paisajes y otras obras
-                    </p>
-                </a>
-
-
-                <a href="#" class="category">
-                    <h3>
-                        Francia
-                    </h3>
-                    <p>
-                        Obras realizadas en Francia
-                    </p>
-                </a>
-
-
-                <a href="#" class="category">
-                    <h3>
-                        Otras obras
-                    </h3>
-                    <p>
-                        Trabajos seleccionados
-                    </p>
+                <a href="obras.html#otras" class="category">
+                    <h3>Otras obras</h3>
+                    <p>Una selección de trabajos diversos</p>
                 </a>
 
             </div>
@@ -543,7 +534,7 @@
 
         <!-- SOBRE MÍ -->
 
-        <section id="sobre-mi" class="about">
+        <section class="about">
 
             <div class="about-image">
                 sobre-mi.jpg
@@ -556,7 +547,7 @@
                 </div>
 
                 <h2 class="section-title">
-                    Pintar lo que no siempre puede verse.
+                    Pintar aquello que no siempre puede verse.
                 </h2>
 
                 <p>
@@ -568,11 +559,11 @@
                 <p>
                     Trabajo entre la figuración y la abstracción,
                     utilizando el color, la luz y la transformación
-                    de espacios para construir imágenes que se
-                    sitúan entre lo real y lo imaginado.
+                    de las imágenes para construir experiencias
+                    pictóricas.
                 </p>
 
-                <a href="#" class="button">
+                <a href="sobre-mi.html" class="button">
                     Conocer más
                 </a>
 
@@ -583,7 +574,7 @@
 
         <!-- ENCARGOS -->
 
-        <section id="encargos">
+        <section>
 
             <div class="commissions">
 
@@ -592,44 +583,16 @@
                 </div>
 
                 <h2 class="section-title">
-                    ¿Tienes una idea para una obra?
+                    Crear una obra a partir de una idea.
                 </h2>
 
                 <p>
-                    También realizo obras por encargo, desarrolladas
-                    a partir de una idea, imagen o concepto personal.
+                    También realizo obras por encargo a partir de
+                    fotografías, recuerdos, ideas o conceptos personales.
                 </p>
 
-                <a href="#" class="button">
-                    Más información
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- CONTACTO -->
-
-        <section id="contacto">
-
-            <div class="commissions">
-
-                <div class="small-title">
-                    Contacto
-                </div>
-
-                <h2 class="section-title">
-                    Hablemos
-                </h2>
-
-                <p>
-                    Para consultar sobre una obra, realizar un encargo
-                    o conocer mi trabajo, puedes ponerte en contacto conmigo.
-                </p>
-
-                <a href="mailto:tuemail@ejemplo.com" class="button">
-                    Contactar
+                <a href="encargos.html" class="button">
+                    Ver cómo funciona
                 </a>
 
             </div>
@@ -644,12 +607,21 @@
     <footer>
 
         <div>
-            © 2026 Sara Heni Guans
+            © 2026 Pilar Casquero Gilabert
         </div>
 
         <div class="social">
-            <a href="#">Instagram</a>
-            <a href="#">WhatsApp</a>
+
+            <a href="#" class="instagram" aria-label="Instagram">
+
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+
+            </a>
+
         </div>
 
     </footer>
