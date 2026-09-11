@@ -1,0 +1,321 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obra | Pilar Casquero Gilabert</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #F9E6E1;
+            color: #1A1412;
+        }
+
+        header {
+            background: #F0BBBB;
+            padding: 22px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #1A1412;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: #C96F78;
+        }
+
+        .instagram {
+            width: 21px;
+            height: 21px;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .work-page {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 65px 6% 100px;
+        }
+
+        .back {
+            display: inline-block;
+            color: #1A1412;
+            text-decoration: none;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+        }
+
+        .back:hover {
+            color: #C96F78;
+        }
+
+        .work-content {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .work-image {
+            width: 100%;
+            background: #E8A3A8;
+        }
+
+        .work-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .placeholder {
+            aspect-ratio: 4 / 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1A1412;
+            font-size: 0.9rem;
+        }
+
+        .work-info {
+            padding-top: 5px;
+        }
+
+        .work-info h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            line-height: 1.1;
+            margin: 0 0 25px;
+        }
+
+        .work-description {
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .details {
+            border-top: 1px solid #C96F78;
+            margin-bottom: 35px;
+        }
+
+        .detail {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 13px 0;
+            border-bottom: 1px solid #C96F78;
+            font-size: 0.95rem;
+        }
+
+        .detail span:first-child {
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .availability {
+            color: #C96F78;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #C96F78;
+            color: white;
+            text-decoration: none;
+            padding: 14px 25px;
+            font-size: 0.95rem;
+        }
+
+        .button:hover {
+            background: #1A1412;
+        }
+
+        footer {
+            background: #E8A3A8;
+            padding: 35px 6%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: #1A1412;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 18px;
+                position: absolute;
+                top: 75px;
+                right: 6%;
+                background: #F0BBBB;
+                padding: 20px 25px;
+                z-index: 10;
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            .work-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .work-info {
+                padding-top: 0;
+            }
+        }
+
+        @media (max-width: 520px) {
+
+            .work-page {
+                padding: 40px 6% 70px;
+            }
+
+            .work-info h1 {
+                font-size: 2.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Pilar Casquero Gilabert</div>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <nav>
+        <a href="../index.html">Inicio</a>
+        <a href="../obras.html">Obras</a>
+        <a href="../exposiciones.html">Exposiciones</a>
+        <a href="../sobre-mi.html">Sobre mí</a>
+        <a href="../encargos.html">Encargos</a>
+        <a href="../contacto.html">Contacto</a>
+
+        <a href="#" aria-label="Instagram">
+            <svg class="instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+        </a>
+    </nav>
+</header>
+
+<main class="work-page">
+
+    <a href="../obras.html" class="back">← Volver a obras</a>
+
+    <div class="work-content">
+
+        <div class="work-image">
+            <div class="placeholder">
+                Aquí irá la fotografía de la obra
+            </div>
+        </div>
+
+        <div class="work-info">
+
+            <h1>Título de la obra</h1>
+
+            <p class="work-description">
+                Aquí podremos escribir una breve descripción de la obra,
+                su proceso o el significado que tiene dentro de tu práctica.
+            </p>
+
+            <div class="details">
+
+                <div class="detail">
+                    <span>Técnica</span>
+                    <span>Acrílico sobre lienzo</span>
+                </div>
+
+                <div class="detail">
+                    <span>Medidas</span>
+                    <span>100 × 80 cm</span>
+                </div>
+
+                <div class="detail">
+                    <span>Año</span>
+                    <span>2026</span>
+                </div>
+
+            </div>
+
+            <div class="price">
+                450 €
+            </div>
+
+            <div class="availability">
+                Disponible
+            </div>
+
+            <a href="../contacto.html" class="button">
+                Consultar compra
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    © 2026 Pilar Casquero Gilabert · Pintura contemporánea
+</footer>
+
+<script>
+function toggleMenu() {
+    document.querySelector("nav").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
+```
