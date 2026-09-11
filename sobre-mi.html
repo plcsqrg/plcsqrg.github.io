@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sobre mí | Pilar Casquero Gilabert</title>
+
+    <meta name="description" content="Sobre Pilar Casquero Gilabert, artista y pintora contemporánea.">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #F9E6E1;
+            color: #1A1412;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* MENÚ */
+
+        header {
+            width: 100%;
+            padding: 25px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #F0BBBB;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 0.02em;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: #C96F78;
+        }
+
+        .instagram {
+            display: flex;
+            align-items: center;
+        }
+
+        .instagram svg {
+            width: 21px;
+            height: 21px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+
+        /* ENCABEZADO */
+
+        .page-header {
+            text-align: center;
+            padding: 60px 6% 45px;
+        }
+
+        .small-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #C96F78;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 500;
+            line-height: 1.1;
+        }
+
+
+        /* CONTENIDO */
+
+        .about {
+            width: 88%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 0 100px;
+
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 520px;
+            background: #E8A3A8;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 30px;
+        }
+
+        .about-image span {
+            font-size: 0.9rem;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            max-width: 620px;
+        }
+
+
+        /* FRASE */
+
+        .quote {
+            background: #F0BBBB;
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .quote p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.7rem;
+            line-height: 1.5;
+        }
+
+
+        /* FORMACIÓN / PRÁCTICA */
+
+        .practice {
+            width: 88%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 90px 0;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .practice h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .practice p {
+            max-width: 500px;
+        }
+
+
+        /* PIE */
+
+        footer {
+            background: #F0BBBB;
+            padding: 35px 6%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+        }
+
+
+        /* MÓVIL */
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: #1A1412;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 18px;
+
+                position: absolute;
+                top: 75px;
+                right: 6%;
+
+                background: #F0BBBB;
+                padding: 20px 25px;
+                z-index: 10;
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            .page-header {
+                padding: 45px 6% 30px;
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding-bottom: 70px;
+            }
+
+            .about-image {
+                min-height: 400px;
+            }
+
+            .practice {
+                grid-template-columns: 1fr;
+                gap: 45px;
+                padding: 70px 0;
+            }
+
+            .quote {
+                padding: 60px 8%;
+            }
+
+            .quote p {
+                font-size: 1.4rem;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width: 520px) {
+
+            .page-header {
+                padding: 35px 6% 25px;
+            }
+
+            .page-header h1 {
+                font-size: 2.6rem;
+            }
+
+            .about {
+                width: 88%;
+            }
+
+            .about-image {
+                min-height: 330px;
+            }
+
+            .about-text h2 {
+                font-size: 1.7rem;
+            }
+
+            .quote {
+                padding: 50px 8%;
+            }
+
+            .quote p {
+                font-size: 1.2rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- MENÚ -->
+
+    <header>
+
+        <a href="index.html" class="logo">
+            Pilar Casquero Gilabert
+        </a>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <nav>
+
+            <a href="obras.html">Obras</a>
+            <a href="exposiciones.html">Exposiciones</a>
+            <a href="sobre-mi.html">Sobre mí</a>
+            <a href="encargos.html">Encargos</a>
+            <a href="contacto.html">Contacto</a>
+
+            <a href="#" class="instagram" aria-label="Instagram">
+
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ENCABEZADO -->
+
+    <main>
+
+        <section class="page-header">
+
+            <div class="small-title">
+                Pilar Casquero Gilabert
+            </div>
+
+            <h1>Sobre mí</h1>
+
+        </section>
+
+
+        <!-- PRESENTACIÓN -->
+
+        <section class="about">
+
+            <div class="about-image">
+                <span>
+                    Aquí irá una fotografía
+                </span>
+            </div>
+
+
+            <div class="about-text">
+
+                <h2>Una pintura nacida de la percepción</h2>
+
+                <p>
+                    Soy Pilar Casquero Gilabert, artista y pintora. Mi práctica
+                    se centra en explorar aquello que percibimos pero que no
+                    siempre puede representarse de forma directa.
+                </p>
+
+                <p>
+                    Me interesa especialmente la relación entre percepción,
+                    memoria, emoción y experiencia. A través de la pintura
+                    busco transformar sensaciones e imágenes mentales en
+                    espacios visuales.
+                </p>
+
+                <p>
+                    Mi proceso parte habitualmente de fotografías, recuerdos
+                    o imágenes que transformo antes de llevarlas al lienzo.
+                    No busco reproducir literalmente una realidad, sino
+                    construir una imagen capaz de transmitir aquello que
+                    provoca o contiene.
+                </p>
+
+                <p>
+                    El color, la luz, la materia y la distorsión son algunos
+                    de los recursos que utilizo para acercarme a esas
+                    experiencias difíciles de expresar con palabras.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FRASE -->
+
+        <section class="quote">
+
+            <p>
+                “Hacer visible lo imperceptible.”
+            </p>
+
+        </section>
+
+
+        <!-- PRÁCTICA -->
+
+        <section class="practice">
+
+            <div>
+
+                <h2>Mi práctica</h2>
+
+                <p>
+                    Mi trabajo se mueve entre la figuración, la abstracción
+                    y diferentes formas de representación de espacios reales
+                    e imaginados. El agua, la naturaleza, la luz y las
+                    transformaciones de la percepción aparecen de manera
+                    recurrente en mi obra.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h2>Interés artístico</h2>
+
+                <p>
+                    Mi investigación parte de una pregunta sencilla:
+                    ¿cómo representar aquello que sentimos, recordamos o
+                    imaginamos cuando no existe una imagen concreta que
+                    podamos observar?
+                </p>
+
+                <p style="margin-top: 20px;">
+                    La pintura se convierte así en un medio para dar forma
+                    a experiencias subjetivas y hacerlas visibles.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE -->
+
+    <footer>
+
+        <p>
+            © Pilar Casquero Gilabert
+        </p>
+
+        <a href="#" class="instagram" aria-label="Instagram">
+
+            <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+
+        </a>
+
+    </footer>
+
+
+    <!-- MENÚ MÓVIL -->
+
+    <script>
+        function toggleMenu() {
+            document.querySelector("nav").classList.toggle("open");
+        }
+    </script>
+
+</body>
+</html>
