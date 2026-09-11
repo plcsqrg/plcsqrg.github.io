@@ -1,10 +1,658 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Prueba</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pilar Casquero Gilabert | Pintura contemporánea</title>
+
+    <meta name="description" content="Sara Heni Guans. Pintura contemporánea entre lo real, lo imaginado y lo imperceptible.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #252525;
+            background: #f8f6f2;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ---------- MENÚ ---------- */
+
+        header {
+            width: 100%;
+            padding: 28px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dedbd5;
+            background: #f8f6f2;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.03em;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            opacity: 0.55;
+        }
+
+        /* ---------- PORTADA ---------- */
+
+        .hero {
+            min-height: 75vh;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 6%;
+            align-items: center;
+            padding: 70px 7%;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .small-title {
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            color: #777;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: normal;
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            max-width: 450px;
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 25px;
+            border: 1px solid #252525;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #252525;
+            color: white;
+        }
+
+        .hero-image {
+            height: 600px;
+            background: #e6d7d5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+        }
+
+        /* ---------- SECCIONES ---------- */
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 45px;
+        }
+
+        .intro {
+            max-width: 700px;
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin-bottom: 60px;
+        }
+
+        /* ---------- OBRAS ---------- */
+
+        .works {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .work {
+            display: block;
+        }
+
+        .work-image {
+            aspect-ratio: 1 / 1;
+            background: #e3dfda;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            font-family: Georgia, serif;
+            margin-bottom: 15px;
+        }
+
+        .work h3 {
+            font-family: Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: normal;
+        }
+
+        .work p {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .all-works {
+            margin-top: 45px;
+        }
+
+        /* ---------- CATEGORÍAS ---------- */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: #ccc8c0;
+            border: 1px solid #ccc8c0;
+        }
+
+        .category {
+            min-height: 220px;
+            background: #f8f6f2;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .category h3 {
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .category p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* ---------- SOBRE MÍ ---------- */
+
+        .about {
+            background: #ebe6e0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10%;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 450px;
+            background: #d8d1ca;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            font-family: Georgia, serif;
+        }
+
+        .about-text {
+            max-width: 550px;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+        }
+
+        /* ---------- ENCARGOS ---------- */
+
+        .commissions {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .commissions p {
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            padding: 50px 7%;
+            border-top: 1px solid #dedbd5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        .social {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* ---------- MÓVIL ---------- */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 50px;
+            }
+
+            .hero-image {
+                height: 400px;
+            }
+
+            .works {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .works {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 3.2rem;
+            }
+        }
+    </style>
 </head>
+
+
 <body>
-    <h1>¡Funciona!</h1>
-    <p>Mi primera página en GitHub Pages.</p>
+
+    <!-- MENÚ -->
+
+    <header>
+
+        <a href="index.html" class="logo">
+            Sara Heni Guans
+        </a>
+
+        <nav>
+            <a href="#obras">Obras</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#exposiciones">Exposiciones</a>
+            <a href="#encargos">Encargos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+    </header>
+
+
+    <!-- PORTADA -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <div class="small-title">
+                    Pintura contemporánea
+                </div>
+
+                <h1>
+                    Entre lo real y lo imaginado.
+                </h1>
+
+                <p>
+                    Una exploración pictórica de la percepción,
+                    la memoria, las emociones y aquellos espacios
+                    que existen entre lo visible y lo imperceptible.
+                </p>
+
+                <a href="#obras" class="button">
+                    Ver obras
+                </a>
+
+            </div>
+
+
+            <div class="hero-image">
+                obra-principal.jpg
+            </div>
+
+        </section>
+
+
+        <!-- OBRAS DESTACADAS -->
+
+        <section id="obras">
+
+            <div class="small-title">
+                Selección
+            </div>
+
+            <h2 class="section-title">
+                Obras
+            </h2>
+
+            <p class="intro">
+                Una selección de trabajos figurativos, abstractos
+                y obras desarrolladas a partir de diferentes
+                experiencias y lugares.
+            </p>
+
+
+            <div class="works">
+
+                <a href="#" class="work">
+
+                    <div class="work-image">
+                        obra1.jpg
+                    </div>
+
+                    <h3>
+                        Obra 01
+                    </h3>
+
+                    <p>
+                        TFG · Figurativa
+                    </p>
+
+                </a>
+
+
+                <a href="#" class="work">
+
+                    <div class="work-image">
+                        obra2.jpg
+                    </div>
+
+                    <h3>
+                        Obra 02
+                    </h3>
+
+                    <p>
+                        TFG · Abstracta
+                    </p>
+
+                </a>
+
+
+                <a href="#" class="work">
+
+                    <div class="work-image">
+                        obra3.jpg
+                    </div>
+
+                    <h3>
+                        Obra 03
+                    </h3>
+
+                    <p>
+                        Colombia
+                    </p>
+
+                </a>
+
+            </div>
+
+
+            <div class="all-works">
+                <a href="#" class="button">
+                    Ver todas las obras
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORÍAS -->
+
+        <section id="exposiciones">
+
+            <div class="small-title">
+                Colecciones
+            </div>
+
+            <h2 class="section-title">
+                Explorar obra
+            </h2>
+
+
+            <div class="categories">
+
+                <a href="#" class="category">
+                    <h3>
+                        TFG · Figurativas
+                    </h3>
+                    <p>
+                        España y Francia
+                    </p>
+                </a>
+
+
+                <a href="#" class="category">
+                    <h3>
+                        TFG · Abstractas
+                    </h3>
+                    <p>
+                        España y Francia
+                    </p>
+                </a>
+
+
+                <a href="#" class="category">
+                    <h3>
+                        Colombia
+                    </h3>
+                    <p>
+                        Obras realizadas a partir de este contexto
+                    </p>
+                </a>
+
+
+                <a href="#" class="category">
+                    <h3>
+                        España
+                    </h3>
+                    <p>
+                        Paisajes y otras obras
+                    </p>
+                </a>
+
+
+                <a href="#" class="category">
+                    <h3>
+                        Francia
+                    </h3>
+                    <p>
+                        Obras realizadas en Francia
+                    </p>
+                </a>
+
+
+                <a href="#" class="category">
+                    <h3>
+                        Otras obras
+                    </h3>
+                    <p>
+                        Trabajos seleccionados
+                    </p>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE MÍ -->
+
+        <section id="sobre-mi" class="about">
+
+            <div class="about-image">
+                sobre-mi.jpg
+            </div>
+
+            <div class="about-text">
+
+                <div class="small-title">
+                    Sobre mí
+                </div>
+
+                <h2 class="section-title">
+                    Pintar lo que no siempre puede verse.
+                </h2>
+
+                <p>
+                    Mi práctica artística parte de la pintura y de
+                    la exploración de la percepción, la memoria y
+                    las experiencias subjetivas.
+                </p>
+
+                <p>
+                    Trabajo entre la figuración y la abstracción,
+                    utilizando el color, la luz y la transformación
+                    de espacios para construir imágenes que se
+                    sitúan entre lo real y lo imaginado.
+                </p>
+
+                <a href="#" class="button">
+                    Conocer más
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ENCARGOS -->
+
+        <section id="encargos">
+
+            <div class="commissions">
+
+                <div class="small-title">
+                    Encargos
+                </div>
+
+                <h2 class="section-title">
+                    ¿Tienes una idea para una obra?
+                </h2>
+
+                <p>
+                    También realizo obras por encargo, desarrolladas
+                    a partir de una idea, imagen o concepto personal.
+                </p>
+
+                <a href="#" class="button">
+                    Más información
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACTO -->
+
+        <section id="contacto">
+
+            <div class="commissions">
+
+                <div class="small-title">
+                    Contacto
+                </div>
+
+                <h2 class="section-title">
+                    Hablemos
+                </h2>
+
+                <p>
+                    Para consultar sobre una obra, realizar un encargo
+                    o conocer mi trabajo, puedes ponerte en contacto conmigo.
+                </p>
+
+                <a href="mailto:tuemail@ejemplo.com" class="button">
+                    Contactar
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE -->
+
+    <footer>
+
+        <div>
+            © 2026 Sara Heni Guans
+        </div>
+
+        <div class="social">
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp</a>
+        </div>
+
+    </footer>
+
 </body>
 </html>
