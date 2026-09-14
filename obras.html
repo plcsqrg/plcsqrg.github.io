@@ -135,5 +135,777 @@
         }
 
         .filter-button {
-            background: transparen
-```
+            background: transparent;
+            border: 1px solid #C96F78;
+            color: #1A1412;
+            padding: 10px 20px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+
+        .filter-button:hover {
+            background: #F0BBBB;
+        }
+
+        .filter-button.active {
+            background: #C96F78;
+            color: #F9E6E1;
+        }
+
+
+        /* GALERÍA */
+
+        .gallery-section {
+            padding: 0 6% 90px;
+        }
+
+        .gallery {
+            columns: 3 280px;
+            column-gap: 24px;
+        }
+
+        .work {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 35px;
+            break-inside: avoid;
+        }
+
+        .work.hidden {
+            display: none;
+        }
+
+        .placeholder {
+            width: 100%;
+            min-height: 280px;
+            background: #E8A3A8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #1A1412;
+        }
+
+        .work-info {
+            padding-top: 12px;
+        }
+
+        .work-info h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .work-info p {
+            font-size: 0.85rem;
+            opacity: 0.75;
+        }
+
+
+        /* PIE */
+
+        footer {
+            background: #E8A3A8;
+            padding: 30px 6%;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+
+        /* TABLET */
+
+        @media (max-width: 850px) {
+
+            .menu-button {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 76px;
+                right: 6%;
+                width: 220px;
+                background: #E8A3A8;
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+                z-index: 10;
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            .gallery {
+                columns: 2 280px;
+            }
+        }
+
+
+        /* MÓVIL */
+
+        @media (max-width: 700px) {
+
+            header {
+                height: 68px;
+                padding: 0 6%;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            nav {
+                top: 68px;
+                right: 6%;
+            }
+
+            .page-header {
+                padding: 40px 6% 30px;
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
+            }
+
+            .page-header p {
+                font-size: 0.98rem;
+            }
+
+            .filters {
+                padding-bottom: 35px;
+            }
+
+            .filter-button {
+                padding: 9px 16px;
+            }
+
+            .gallery-section {
+                padding-bottom: 65px;
+            }
+        }
+
+
+        @media (max-width: 520px) {
+
+            .page-header {
+                padding: 35px 6% 25px;
+            }
+
+            .page-header h1 {
+                font-size: 2.6rem;
+            }
+
+            .page-header p {
+                font-size: 0.9rem;
+            }
+
+            .gallery {
+                columns: 1;
+            }
+
+            .gallery-section {
+                padding-bottom: 60px;
+            }
+
+            .work {
+                margin-bottom: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- MENÚ -->
+
+<header>
+
+    <a href="index.html" class="logo">
+        Pilar Casquero Gilabert
+    </a>
+
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+    <nav id="mainNav">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="obras.html">Obras</a>
+
+        <a href="sobre-mi.html">Sobre mí</a>
+
+        <a href="encargos.html">Encargos</a>
+
+        <a href="contacto.html">Contacto</a>
+
+        <a href="https://www.instagram.com/pilarcasquerog/"
+           target="_blank"
+           aria-label="Instagram"
+           class="instagram">
+
+            <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ENCABEZADO -->
+
+<main>
+
+    <section class="page-header">
+
+        <div class="small-title">
+            Producción artística
+        </div>
+
+        <h1>Obras</h1>
+
+        <p>
+            Una selección de mi producción pictórica, organizada según
+            diferentes aproximaciones a la representación, la materia y la percepción.
+        </p>
+
+    </section>
+
+
+    <!-- FILTROS -->
+
+    <div class="filters">
+
+        <button class="filter-button active" onclick="filterWorks('todas', this)">
+            Todas
+        </button>
+
+        <button class="filter-button" onclick="filterWorks('figurativa', this)">
+            Figurativas
+        </button>
+
+        <button class="filter-button" onclick="filterWorks('abstracta', this)">
+            Abstractas
+        </button>
+
+    </div>
+
+
+    <!-- GALERÍA -->
+
+    <section class="gallery-section">
+
+        <div class="gallery" id="gallery">
+
+
+            <!-- OBRA 1 · ABSTRACTA -->
+
+            <a href="obras/obra1.html"
+               class="work"
+               data-category="abstracta"
+               data-order="1">
+
+                <div class="placeholder">
+                    obra1.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 1</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 2 · FIGURATIVA -->
+
+            <a href="obras/obra2.html"
+               class="work"
+               data-category="figurativa"
+               data-order="2">
+
+                <div class="placeholder">
+                    obra2.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 2</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 3 · FIGURATIVA -->
+
+            <a href="obras/obra3.html"
+               class="work"
+               data-category="figurativa"
+               data-order="3">
+
+                <div class="placeholder">
+                    obra3.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 3</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 4 · FIGURATIVA -->
+
+            <a href="obras/obra4.html"
+               class="work"
+               data-category="figurativa"
+               data-order="4">
+
+                <div class="placeholder">
+                    obra4.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 4</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 5 · FIGURATIVA -->
+
+            <a href="obras/obra5.html"
+               class="work"
+               data-category="figurativa"
+               data-order="5">
+
+                <div class="placeholder">
+                    obra5.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 5</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 6 · ABSTRACTA -->
+
+            <a href="obras/obra6.html"
+               class="work"
+               data-category="abstracta"
+               data-order="6">
+
+                <div class="placeholder">
+                    obra6.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 6</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 7 · ABSTRACTA -->
+
+            <a href="obras/obra7.html"
+               class="work"
+               data-category="abstracta"
+               data-order="7">
+
+                <div class="placeholder">
+                    obra7.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 7</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 8 · FIGURATIVA -->
+
+            <a href="obras/obra8.html"
+               class="work"
+               data-category="figurativa"
+               data-order="8">
+
+                <div class="placeholder">
+                    obra8.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 8</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 9 · FIGURATIVA -->
+
+            <a href="obras/obra9.html"
+               class="work"
+               data-category="figurativa"
+               data-order="9">
+
+                <div class="placeholder">
+                    obra9.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 9</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 10 · FIGURATIVA -->
+
+            <a href="obras/obra10.html"
+               class="work"
+               data-category="figurativa"
+               data-order="10">
+
+                <div class="placeholder">
+                    obra10.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 10</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 11 · FIGURATIVA -->
+
+            <a href="obras/obra11.html"
+               class="work"
+               data-category="figurativa"
+               data-order="11">
+
+                <div class="placeholder">
+                    obra11.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 11</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 12 · ABSTRACTA -->
+
+            <a href="obras/obra12.html"
+               class="work"
+               data-category="abstracta"
+               data-order="12">
+
+                <div class="placeholder">
+                    obra12.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 12</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 13 · ABSTRACTA -->
+
+            <a href="obras/obra13.html"
+               class="work"
+               data-category="abstracta"
+               data-order="13">
+
+                <div class="placeholder">
+                    obra13.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 13</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 14 · FIGURATIVA -->
+
+            <a href="obras/obra14.html"
+               class="work"
+               data-category="figurativa"
+               data-order="14">
+
+                <div class="placeholder">
+                    obra14.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 14</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 15 · FIGURATIVA -->
+
+            <a href="obras/obra15.html"
+               class="work"
+               data-category="figurativa"
+               data-order="15">
+
+                <div class="placeholder">
+                    obra15.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 15</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 16 · FIGURATIVA -->
+
+            <a href="obras/obra16.html"
+               class="work"
+               data-category="figurativa"
+               data-order="16">
+
+                <div class="placeholder">
+                    obra16.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 16</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 17 · FIGURATIVA -->
+
+            <a href="obras/obra17.html"
+               class="work"
+               data-category="figurativa"
+               data-order="17">
+
+                <div class="placeholder">
+                    obra17.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 17</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 18 · ABSTRACTA -->
+
+            <a href="obras/obra18.html"
+               class="work"
+               data-category="abstracta"
+               data-order="18">
+
+                <div class="placeholder">
+                    obra18.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 18</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 19 · FIGURATIVA -->
+
+            <a href="obras/obra19.html"
+               class="work"
+               data-category="figurativa"
+               data-order="19">
+
+                <div class="placeholder">
+                    obra19.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 19</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 20 · FIGURATIVA -->
+
+            <a href="obras/obra20.html"
+               class="work"
+               data-category="figurativa"
+               data-order="20">
+
+                <div class="placeholder">
+                    obra20.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 20</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 21 · FIGURATIVA -->
+
+            <a href="obras/obra21.html"
+               class="work"
+               data-category="figurativa"
+               data-order="21">
+
+                <div class="placeholder">
+                    obra21.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 21</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+            <!-- OBRA 22 · ABSTRACTA -->
+
+            <a href="obras/obra22.html"
+               class="work"
+               data-category="abstracta"
+               data-order="22">
+
+                <div class="placeholder">
+                    obra22.jpg
+                </div>
+
+                <div class="work-info">
+                    <h3>Obra 22</h3>
+                    <p>Técnica · Medidas · Año</p>
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- PIE -->
+
+<footer>
+
+    © Pilar Casquero Gilabert
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+        document.getElementById("mainNav").classList.toggle("open");
+    }
+
+
+    function filterWorks(category, button) {
+
+        const gallery = document.getElementById("gallery");
+        const works = Array.from(gallery.querySelectorAll(".work"));
+
+        document.querySelectorAll(".filter-button").forEach(function(btn) {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+
+        if (category === "todas") {
+
+            works.sort(function(a, b) {
+                return Number(a.dataset.order) - Number(b.dataset.order);
+            });
+
+            works.forEach(function(work) {
+                work.classList.remove("hidden");
+                gallery.appendChild(work);
+            });
+
+        } else {
+
+            const selected = works.filter(function(work) {
+                return work.dataset.category === category;
+            });
+
+            const other = works.filter(function(work) {
+                return work.dataset.category !== category;
+            });
+
+            selected.sort(function(a, b) {
+                return Number(a.dataset.order) - Number(b.dataset.order);
+            });
+
+            other.sort(function(a, b) {
+                return Number(a.dataset.order) - Number(b.dataset.order);
+            });
+
+            selected.concat(other).forEach(function(work) {
+                work.classList.remove("hidden");
+                gallery.appendChild(work);
+            });
+
+        }
+
+    }
+
+</script>
+
+
+</body>
+</html>
