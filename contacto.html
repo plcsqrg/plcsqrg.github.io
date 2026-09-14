@@ -1,35 +1,50 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contacto | Pilar Casquero Gilabert</title>
+
+    <meta name="description" content="Contacto de Pilar Casquero Gilabert, artista de pintura contemporánea.">
 
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background: #F9E6E1;
             color: #1A1412;
+            line-height: 1.6;
         }
 
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* HEADER */
+
         header {
-            background: #F0BBBB;
-            padding: 22px 6%;
+            height: 76px;
+            background: #E8A3A8;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
             position: relative;
+            border-bottom: 3px solid #C96F78;
         }
 
         .logo {
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
+            font-weight: 700;
             letter-spacing: 0.02em;
         }
 
@@ -40,73 +55,81 @@
         }
 
         nav a {
-            color: #1A1412;
-            text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.88rem;
+            font-weight: 700;
+            transition: opacity 0.2s ease;
         }
 
         nav a:hover {
-            color: #C96F78;
+            opacity: 0.55;
         }
 
         .instagram {
-            width: 21px;
-            height: 21px;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
         }
 
-        .menu-toggle {
-            display: none;
+        .instagram svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
         }
+
+        .menu-button {
+            display: none;
+            border: none;
+            background: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* PAGE HEADER */
 
         .page-header {
             text-align: center;
-            padding: 60px 6% 40px;
+            padding: 65px 6% 55px;
         }
 
         .page-header h1 {
             font-size: 3.5rem;
             font-weight: 500;
             line-height: 1.1;
-            margin: 0 0 15px;
+            margin-bottom: 20px;
         }
 
         .page-header p {
-            max-width: 650px;
+            max-width: 720px;
             margin: 0 auto;
-            line-height: 1.6;
             font-size: 1rem;
+            line-height: 1.7;
         }
+
+        /* CONTACT */
 
         .contact-section {
-            max-width: 1100px;
+            width: 88%;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 20px 6% 90px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
+            padding: 10px 0 100px;
         }
 
-        .contact-info h2,
-        .contact-form h2 {
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-top: 0;
-            margin-bottom: 25px;
-        }
-
-        .contact-info p {
-            line-height: 1.7;
-            margin-bottom: 30px;
+        .contact-info {
+            text-align: center;
         }
 
         .contact-list {
             display: flex;
             flex-direction: column;
             gap: 18px;
+            margin-top: 35px;
         }
 
         .contact-item {
-            padding: 18px 20px;
+            padding: 20px;
             background: #F0BBBB;
         }
 
@@ -125,237 +148,54 @@
             color: #C96F78;
         }
 
-        .contact-form {
-            background: #F0BBBB;
-            padding: 35px;
-        }
-
-        .contact-form p {
-            line-height: 1.6;
-            margin-top: 0;
-            margin-bottom: 25px;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 7px;
-            font-size: 0.9rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            border: 1px solid #C96F78;
-            background: #F9E6E1;
-            padding: 13px;
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
         .email-button {
             display: inline-block;
+            margin-top: 35px;
             background: #C96F78;
-            color: white;
+            color: #F9E6E1;
             text-decoration: none;
-            padding: 13px 25px;
-            margin-top: 5px;
-            font-size: 0.95rem;
+            padding: 14px 28px;
+            font-size: 0.9rem;
+            border: 1px solid #C96F78;
+            border-radius: 5px;
+            transition: all 0.2s ease;
         }
 
         .email-button:hover {
             background: #1A1412;
+            border-color: #1A1412;
         }
 
-        .contact-note {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 6% 80px;
-            text-align: center;
-        }
-
-        .contact-note p {
-            line-height: 1.7;
-            margin: 0;
-        }
+        /* FOOTER */
 
         footer {
             background: #E8A3A8;
-            padding: 35px 6%;
+            padding: 30px 6%;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
         }
+
+        /* MOBILE */
 
         @media (max-width: 850px) {
 
-            header {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                gap: 20px;
-            }
-
-            .menu-toggle {
+            .menu-button {
                 display: block;
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                cursor: pointer;
-                color: #1A1412;
             }
 
             nav {
                 display: none;
-                flex-direction: column;
-                gap: 18px;
                 position: absolute;
-                top: 75px;
+                top: 76px;
                 right: 6%;
-                background: #F0BBBB;
-                padding: 20px 25px;
+                width: 220px;
+                background: #E8A3A8;
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
                 z-index: 10;
             }
 
             nav.open {
-                display: flex;
-            }
-
-            .contact-section {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-        }
-
-        @media (max-width: 520px) {
-
-            .page-header {
-                padding: 35px 6% 25px;
-            }
-
-            .page-header h1 {
-                font-size: 2.6rem;
-            }
-
-            .contact-section {
-                padding: 20px 6% 60px;
-            }
-
-            .contact-form {
-                padding: 25px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <div class="logo">Pilar Casquero Gilabert</div>
-
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="obras.html">Obras</a>
-        <a href="exposiciones.html">Exposiciones</a>
-        <a href="sobre-mi.html">Sobre mí</a>
-        <a href="encargos.html">Encargos</a>
-        <a href="contacto.html">Contacto</a>
-
-        <a href="#" aria-label="Instagram">
-            <svg class="instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                <circle cx="12" cy="12" r="4"></circle>
-                <circle cx="17.5" cy="6.5" r="1"></circle>
-            </svg>
-        </a>
-    </nav>
-</header>
-
-<section class="page-header">
-    <h1>Contacto</h1>
-    <p>
-        Si quieres comprar una obra, consultar su disponibilidad,
-        solicitar un encargo o ponerte en contacto conmigo por cualquier
-        otro motivo, puedes escribirme.
-    </p>
-</section>
-
-<section class="contact-section">
-
-    <div class="contact-info">
-
-        <h2>Hablemos</h2>
-
-        <p>
-            Cada consulta es diferente. Para encargos, compras de obras
-            o cualquier otra propuesta, escríbeme y te responderé
-            personalmente con toda la información que necesites.
-        </p>
-
-        <div class="contact-list">
-
-            <div class="contact-item">
-                <strong>Correo electrónico</strong>
-                <a href="mailto:pilarcasquerog">
-                    pilarcasquerog
-                </a>
-            </div>
-
-            <div class="contact-item">
-                <strong>Instagram</strong>
-                <a href="#">
-                    @pilarcasquerog
-                </a>
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="contact-form">
-
-        <h2>Escríbeme</h2>
-
-        <p>
-            Puedes enviarme un correo directamente desde aquí.
-        </p>
-
-        <a class="email-button" href="mailto:pilarcasquerog@gmail.com">
-            Enviar un correo
-        </a>
-
-    </div>
-
-</section>
-
-<section class="contact-note">
-    <p>
-        Para solicitar un encargo, cuéntame brevemente qué te gustaría
-        representar, si tienes alguna imagen o referencia y, si lo sabes,
-        el tamaño aproximado. Te responderé personalmente para valorar
-        la propuesta.
-    </p>
-</section>
-
-<footer>
-    © 2026 Pilar Casquero Gilabert · Pintura contemporánea
-</footer>
-
-<script>
-function toggleMenu() {
-    document.querySelector("nav").classList.toggle("open");
-}
-</script>
-
-</body>
-</html>
 ```
