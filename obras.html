@@ -118,7 +118,8 @@
             padding: 0 5% 80px;
         }
 
-        .work {
+        .work,
+        .work-pair {
             display: inline-block;
             width: 100%;
             margin-bottom: 35px;
@@ -157,6 +158,32 @@
             font-size: 0.8rem;
             color: #6f5b58;
             line-height: 1.4;
+        }
+
+        /* Parejas de obras */
+
+        .work-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .work-pair .work {
+            display: block;
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        .work-pair .work-info {
+            padding-top: 9px;
+        }
+
+        .work-pair .work-info h3 {
+            font-size: 1.05rem;
+        }
+
+        .work-pair .work-info p {
+            font-size: 0.72rem;
         }
 
         footer {
@@ -207,6 +234,11 @@
             .gallery {
                 columns: 1;
                 padding: 0 7% 60px;
+            }
+
+            .work-pair {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
             }
         }
     </style>
@@ -362,74 +394,86 @@
 
     <!-- OBRAS 6 Y 18: PAISAJE EN FORMACIÓN -->
 
-    <a href="obras/obra6.html"
-       class="work"
-       data-category="abstracta"
-       data-order="6">
+    <div class="work-pair"
+         data-category="abstracta"
+         data-order="6">
 
-        <div class="work-image">
-            <img src="imagenes/obra6.jpg" alt="Paisaje en formación (2/2)">
-        </div>
+        <a href="obras/obra6.html"
+           class="work"
+           data-category="abstracta"
+           data-order="6">
 
-        <div class="work-info">
-            <h3>Paisaje en formación (2/2)</h3>
-            <p>46 × 46 cm · 2025</p>
-        </div>
+            <div class="work-image">
+                <img src="imagenes/obra6.jpg" alt="Paisaje en formación (2/2)">
+            </div>
 
-    </a>
+            <div class="work-info">
+                <h3>Paisaje en formación (2/2)</h3>
+                <p>46 × 46 cm · 2025</p>
+            </div>
+
+        </a>
 
 
-    <a href="obras/obra18.html"
-       class="work"
-       data-category="figurativa"
-       data-order="18">
+        <a href="obras/obra18.html"
+           class="work"
+           data-category="abstracta"
+           data-order="18">
 
-        <div class="work-image">
-            <img src="imagenes/obra18.jpg" alt="Paisaje en formación (1/2)">
-        </div>
+            <div class="work-image">
+                <img src="imagenes/obra18.jpg" alt="Paisaje en formación (1/2)">
+            </div>
 
-        <div class="work-info">
-            <h3>Paisaje en formación (1/2)</h3>
-            <p>46 × 46 cm · 2025</p>
-        </div>
+            <div class="work-info">
+                <h3>Paisaje en formación (1/2)</h3>
+                <p>46 × 46 cm · 2025</p>
+            </div>
 
-    </a>
+        </a>
+
+    </div>
 
 
     <!-- OBRAS 7 Y 12: BLANCO -->
 
-    <a href="obras/obra7.html"
-       class="work"
-       data-category="abstracta"
-       data-order="7">
+    <div class="work-pair"
+         data-category="abstracta"
+         data-order="7">
 
-        <div class="work-image">
-            <img src="imagenes/obra7.jpg" alt="Blanco (1/2)">
-        </div>
+        <a href="obras/obra7.html"
+           class="work"
+           data-category="abstracta"
+           data-order="7">
 
-        <div class="work-info">
-            <h3>Blanco (1/2)</h3>
-            <p>200 × 200 cm · 2026</p>
-        </div>
+            <div class="work-image">
+                <img src="imagenes/obra7.jpg" alt="Blanco (1/2)">
+            </div>
 
-    </a>
+            <div class="work-info">
+                <h3>Blanco (1/2)</h3>
+                <p>200 × 200 cm · 2026</p>
+            </div>
+
+        </a>
 
 
-    <a href="obras/obra12.html"
-       class="work"
-       data-category="abstracta"
-       data-order="12">
+        <a href="obras/obra12.html"
+           class="work"
+           data-category="abstracta"
+           data-order="12">
 
-        <div class="work-image">
-            <img src="imagenes/obra12.jpg" alt="Blanco (2/2)">
-        </div>
+            <div class="work-image">
+                <img src="imagenes/obra12.jpg" alt="Blanco (2/2)">
+            </div>
 
-        <div class="work-info">
-            <h3>Blanco (2/2)</h3>
-            <p>200 × 200 cm · 2026</p>
-        </div>
+            <div class="work-info">
+                <h3>Blanco (2/2)</h3>
+                <p>200 × 200 cm · 2026</p>
+            </div>
 
-    </a>
+        </a>
+
+    </div>
 
 
     <!-- OBRA 8 -->
@@ -697,6 +741,7 @@
 
     </a>
 
+
 </main>
 
 
@@ -706,14 +751,20 @@
 
 
 <script>
+
     function toggleMenu() {
         document.getElementById("mainNav").classList.toggle("open");
     }
 
+
     function filterWorks(category, button) {
 
         const gallery = document.getElementById("gallery");
-        const works = Array.from(gallery.querySelectorAll(".work"));
+
+        const items = Array.from(
+            gallery.children
+        );
+
 
         document.querySelectorAll(".filter-button").forEach(function(btn) {
             btn.classList.remove("active");
@@ -721,39 +772,46 @@
 
         button.classList.add("active");
 
+
         if (category === "todas") {
 
-            works.sort(function(a, b) {
+            items.sort(function(a, b) {
                 return Number(a.dataset.order) - Number(b.dataset.order);
-            });
-
-            works.forEach(function(work) {
-                gallery.appendChild(work);
             });
 
         } else {
 
-            const selected = works.filter(function(work) {
-                return work.dataset.category === category;
+            items.sort(function(a, b) {
+
+                const aSelected =
+                    a.dataset.category === category;
+
+                const bSelected =
+                    b.dataset.category === category;
+
+
+                if (aSelected && !bSelected) {
+                    return -1;
+                }
+
+                if (!aSelected && bSelected) {
+                    return 1;
+                }
+
+                return Number(a.dataset.order) -
+                       Number(b.dataset.order);
+
             });
 
-            const other = works.filter(function(work) {
-                return work.dataset.category !== category;
-            });
-
-            selected.sort(function(a, b) {
-                return Number(a.dataset.order) - Number(b.dataset.order);
-            });
-
-            other.sort(function(a, b) {
-                return Number(a.dataset.order) - Number(b.dataset.order);
-            });
-
-            selected.concat(other).forEach(function(work) {
-                gallery.appendChild(work);
-            });
         }
+
+
+        items.forEach(function(item) {
+            gallery.appendChild(item);
+        });
+
     }
+
 </script>
 
 </body>
