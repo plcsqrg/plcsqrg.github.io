@@ -243,75 +243,101 @@
            GALERÍA EXPOSICIONES
         ========================= */
 
-        .exhibition-photos {
+       /* =========================
+   GALERÍA EXPOSICIONES
+========================= */
 
-            /*
-             El conjunto completo es mucho más pequeño
-             que antes.
-            */
+.exhibition-photos {
+    width: 55%;
+    max-width: 600px;
 
-            width: 55%;
-            max-width: 600px;
-
-            display: grid;
-
-            grid-template-columns: 1.8fr 1fr 1fr;
-
-            grid-template-rows: auto auto;
-
-            gap: 14px;
-
-            align-items: start;
-        }
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
 
 
-        .exhibition-photos a {
-            display: block;
-            overflow: hidden;
-            background: #F0D8D3;
-        }
+.exhibition-photos a {
+    display: block;
+    overflow: hidden;
+    background: #F0D8D3;
+}
 
 
-        .exhibition-photos img {
-            display: block;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
+.exhibition-photos img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
 
 
-        .exhibition-photos a:hover img {
-            transform: scale(1.025);
-        }
+.exhibition-photos a:hover img {
+    transform: scale(1.025);
+}
 
 
-        /* CARTEL */
+/* CARTEL GRANDE */
 
-        .exhibition-photos .poster {
-
-            grid-column: 1;
-            grid-row: 1 / span 2;
-
-        }
+.exhibition-photos .poster {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
 
 
-        /* TRES FOTOS PEQUEÑAS */
+/* DOS FOTOS DE SALA */
 
-        .exhibition-photos .horizontal {
-            grid-column: auto;
-        }
-
-
-        .exhibition-photos .vertical-final {
-
-            grid-column: 2 / span 2;
-            grid-row: 2;
-
-            width: 55%;
-        }
+.exhibition-photos .horizontal {
+    grid-column: 2;
+}
 
 
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 850px) {
+
+    .exhibition-photos {
+        width: 75%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+
+    .exhibition-photos .poster {
+        grid-column: 1 / span 2;
+        grid-row: auto;
+        width: 65%;
+        margin: 0 auto;
+    }
+
+
+    .exhibition-photos .horizontal {
+        grid-column: auto;
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .exhibition-photos {
+        width: 85%;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+
+    .exhibition-photos .poster {
+        width: 70%;
+    }
+
+}
         /* =========================
            FOOTER
         ========================= */
