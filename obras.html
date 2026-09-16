@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Obras | Pilar Casquero Gilabert</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -24,6 +26,9 @@
             color: inherit;
             text-decoration: none;
         }
+
+
+        /* HEADER */
 
         header {
             height: 76px;
@@ -68,6 +73,9 @@
             color: #1A1412;
         }
 
+
+        /* CABECERA DE LA PÁGINA */
+
         .page-header {
             text-align: center;
             padding: 80px 5% 55px;
@@ -85,6 +93,9 @@
             line-height: 1.7;
             font-size: 1rem;
         }
+
+
+        /* BOTONES */
 
         .filters {
             display: flex;
@@ -112,19 +123,25 @@
             color: #F9E6E1;
         }
 
+
+        /* GALERÍA */
+
         .gallery {
             columns: 3 280px;
             column-gap: 24px;
             padding: 0 5% 80px;
         }
 
-        .work,
-        .work-pair {
+        .work {
             display: inline-block;
             width: 100%;
             margin-bottom: 35px;
             break-inside: avoid;
             vertical-align: top;
+        }
+
+        .work.hidden {
+            display: none;
         }
 
         .work-image {
@@ -160,31 +177,33 @@
             line-height: 1.4;
         }
 
-        /* Parejas de obras */
+
+        /* PAREJAS: MISMO TAMAÑO Y UNA DEBAJO DE OTRA */
 
         .work-pair {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 35px;
+            break-inside: avoid;
+            vertical-align: top;
         }
 
         .work-pair .work {
             display: block;
             width: 100%;
+            margin-bottom: 35px;
+        }
+
+        .work-pair .work:last-child {
             margin-bottom: 0;
         }
 
-        .work-pair .work-info {
-            padding-top: 9px;
+        .work-pair.hidden {
+            display: none;
         }
 
-        .work-pair .work-info h3 {
-            font-size: 1.05rem;
-        }
 
-        .work-pair .work-info p {
-            font-size: 0.72rem;
-        }
+        /* FOOTER */
 
         footer {
             background: #E8A3A8;
@@ -193,6 +212,9 @@
             font-size: 0.8rem;
             border-top: 3px solid #C96F78;
         }
+
+
+        /* MÓVIL */
 
         @media (max-width: 760px) {
 
@@ -237,41 +259,62 @@
             }
 
             .work-pair {
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
+                width: 100%;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-<header>
-    <div class="logo">Pilar Casquero Gilabert</div>
 
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
+<header>
+
+    <div class="logo">
+        Pilar Casquero Gilabert
+    </div>
+
+    <button class="menu-button" onclick="toggleMenu()">
+        ☰
+    </button>
 
     <nav id="mainNav">
+
         <a href="index.html">Inicio</a>
+
         <a href="obras.html">Obras</a>
+
         <a href="sobre-mi.html">Sobre mí</a>
+
         <a href="encargos.html">Encargos</a>
+
         <a href="contacto.html">Contacto</a>
-        <a href="https://www.instagram.com/pilarcasquerog/" target="_blank" rel="noopener noreferrer">
+
+        <a href="https://www.instagram.com/pilarcasquerog/"
+           target="_blank"
+           rel="noopener noreferrer">
             Instagram
         </a>
+
     </nav>
+
 </header>
 
 
+
 <section class="page-header">
+
     <h1>Obras</h1>
 
     <p>
         Una selección de mi producción pictórica, organizada según diferentes
         aproximaciones a la representación, la materia y la percepción.
     </p>
+
 </section>
+
 
 
 <div class="filters">
@@ -294,7 +337,9 @@
 </div>
 
 
+
 <main class="gallery" id="gallery">
+
 
 
     <!-- OBRA 1 -->
@@ -316,6 +361,7 @@
     </a>
 
 
+
     <!-- OBRA 2 -->
 
     <a href="obras/obra2.html"
@@ -333,6 +379,7 @@
         </div>
 
     </a>
+
 
 
     <!-- OBRA 3 -->
@@ -354,6 +401,7 @@
     </a>
 
 
+
     <!-- OBRA 4 -->
 
     <a href="obras/obra4.html"
@@ -371,6 +419,7 @@
         </div>
 
     </a>
+
 
 
     <!-- OBRA 5 -->
@@ -392,19 +441,21 @@
     </a>
 
 
+
     <!-- OBRAS 6 Y 18: PAISAJE EN FORMACIÓN -->
 
     <div class="work-pair"
-         data-category="abstracta"
+         data-pair-category="abstracta"
          data-order="6">
+
 
         <a href="obras/obra6.html"
            class="work"
-           data-category="abstracta"
-           data-order="6">
+           data-category="abstracta">
 
             <div class="work-image">
-                <img src="imagenes/obra6.jpg" alt="Paisaje en formación (2/2)">
+                <img src="imagenes/obra6.jpg"
+                     alt="Paisaje en formación (2/2)">
             </div>
 
             <div class="work-info">
@@ -417,11 +468,11 @@
 
         <a href="obras/obra18.html"
            class="work"
-           data-category="abstracta"
-           data-order="18">
+           data-category="abstracta">
 
             <div class="work-image">
-                <img src="imagenes/obra18.jpg" alt="Paisaje en formación (1/2)">
+                <img src="imagenes/obra18.jpg"
+                     alt="Paisaje en formación (1/2)">
             </div>
 
             <div class="work-info">
@@ -431,22 +482,25 @@
 
         </a>
 
+
     </div>
+
 
 
     <!-- OBRAS 7 Y 12: BLANCO -->
 
     <div class="work-pair"
-         data-category="abstracta"
+         data-pair-category="abstracta"
          data-order="7">
+
 
         <a href="obras/obra7.html"
            class="work"
-           data-category="abstracta"
-           data-order="7">
+           data-category="abstracta">
 
             <div class="work-image">
-                <img src="imagenes/obra7.jpg" alt="Blanco (1/2)">
+                <img src="imagenes/obra7.jpg"
+                     alt="Blanco (1/2)">
             </div>
 
             <div class="work-info">
@@ -459,11 +513,11 @@
 
         <a href="obras/obra12.html"
            class="work"
-           data-category="abstracta"
-           data-order="12">
+           data-category="abstracta">
 
             <div class="work-image">
-                <img src="imagenes/obra12.jpg" alt="Blanco (2/2)">
+                <img src="imagenes/obra12.jpg"
+                     alt="Blanco (2/2)">
             </div>
 
             <div class="work-info">
@@ -473,7 +527,9 @@
 
         </a>
 
+
     </div>
+
 
 
     <!-- OBRA 8 -->
@@ -495,6 +551,7 @@
     </a>
 
 
+
     <!-- OBRA 9 -->
 
     <a href="obras/obra9.html"
@@ -512,6 +569,7 @@
         </div>
 
     </a>
+
 
 
     <!-- OBRA 10 -->
@@ -533,6 +591,7 @@
     </a>
 
 
+
     <!-- OBRA 11 -->
 
     <a href="obras/obra11.html"
@@ -550,6 +609,7 @@
         </div>
 
     </a>
+
 
 
     <!-- OBRA 13 -->
@@ -571,6 +631,7 @@
     </a>
 
 
+
     <!-- OBRA 14 -->
 
     <a href="obras/obra14.html"
@@ -588,6 +649,7 @@
         </div>
 
     </a>
+
 
 
     <!-- OBRA 15 -->
@@ -609,6 +671,7 @@
     </a>
 
 
+
     <!-- OBRA 16 -->
 
     <a href="obras/obra16.html"
@@ -626,6 +689,7 @@
         </div>
 
     </a>
+
 
 
     <!-- OBRA 17 -->
@@ -647,6 +711,7 @@
     </a>
 
 
+
     <!-- OBRA 19 -->
 
     <a href="obras/obra19.html"
@@ -664,6 +729,7 @@
         </div>
 
     </a>
+
 
 
     <!-- OBRA 20 -->
@@ -685,6 +751,7 @@
     </a>
 
 
+
     <!-- OBRA 21 -->
 
     <a href="obras/obra21.html"
@@ -704,6 +771,7 @@
     </a>
 
 
+
     <!-- OBRA 22 -->
 
     <a href="obras/obra22.html"
@@ -721,6 +789,7 @@
         </div>
 
     </a>
+
 
 
     <!-- OBRA 24 -->
@@ -745,9 +814,13 @@
 </main>
 
 
+
 <footer>
+
     © Pilar Casquero Gilabert
+
 </footer>
+
 
 
 <script>
@@ -761,10 +834,11 @@
 
         const gallery = document.getElementById("gallery");
 
-        const items = Array.from(
-            gallery.children
-        );
+        const works = gallery.querySelectorAll(".work");
+        const pairs = gallery.querySelectorAll(".work-pair");
 
+
+        /* Cambiar botón activo */
 
         document.querySelectorAll(".filter-button").forEach(function(btn) {
             btn.classList.remove("active");
@@ -773,46 +847,51 @@
         button.classList.add("active");
 
 
-        if (category === "todas") {
+        /* Obras individuales */
 
-            items.sort(function(a, b) {
-                return Number(a.dataset.order) - Number(b.dataset.order);
-            });
+        works.forEach(function(work) {
 
-        } else {
+            if (category === "todas") {
 
-            items.sort(function(a, b) {
+                work.classList.remove("hidden");
 
-                const aSelected =
-                    a.dataset.category === category;
+            } else {
 
-                const bSelected =
-                    b.dataset.category === category;
-
-
-                if (aSelected && !bSelected) {
-                    return -1;
+                if (work.dataset.category === category) {
+                    work.classList.remove("hidden");
+                } else {
+                    work.classList.add("hidden");
                 }
 
-                if (!aSelected && bSelected) {
-                    return 1;
+            }
+
+        });
+
+
+        /* Parejas */
+
+        pairs.forEach(function(pair) {
+
+            if (category === "todas") {
+
+                pair.classList.remove("hidden");
+
+            } else {
+
+                if (pair.dataset.pairCategory === category) {
+                    pair.classList.remove("hidden");
+                } else {
+                    pair.classList.add("hidden");
                 }
 
-                return Number(a.dataset.order) -
-                       Number(b.dataset.order);
+            }
 
-            });
-
-        }
-
-
-        items.forEach(function(item) {
-            gallery.appendChild(item);
         });
 
     }
 
 </script>
+
 
 </body>
 </html>
