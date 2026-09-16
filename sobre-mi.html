@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sobre mí | Pilar Casquero Gilabert</title>
 
     <meta name="description" content="Sobre Pilar Casquero Gilabert, artista y pintora contemporánea.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
 
@@ -16,6 +20,7 @@
             padding: 0;
         }
 
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #F9E6E1;
@@ -23,27 +28,34 @@
             line-height: 1.6;
         }
 
+
         a {
             color: inherit;
             text-decoration: none;
         }
 
+
         /* MENÚ */
 
         header {
-            width: 100%;
-            padding: 25px 6%;
+            height: 76px;
+            background: #E8A3A8;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            background: #F0BBBB;
+            justify-content: space-between;
+            padding: 0 5%;
+            position: relative;
+            border-bottom: 3px solid #C96F78;
         }
 
+
         .logo {
-            font-size: 1.1rem;
-            font-weight: bold;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
+            font-weight: 700;
             letter-spacing: 0.02em;
         }
+
 
         nav {
             display: flex;
@@ -51,18 +63,24 @@
             gap: 28px;
         }
 
+
         nav a {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
+            font-weight: 700;
+            transition: opacity 0.2s ease;
         }
 
+
         nav a:hover {
-            color: #C96F78;
+            opacity: 0.55;
         }
+
 
         .instagram {
             display: flex;
             align-items: center;
         }
+
 
         .instagram svg {
             width: 21px;
@@ -72,8 +90,14 @@
             stroke-width: 1.8;
         }
 
-        .menu-toggle {
+
+        .menu-button {
             display: none;
+            border: none;
+            background: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #1A1412;
         }
 
 
@@ -81,8 +105,9 @@
 
         .page-header {
             text-align: center;
-            padding: 60px 6% 45px;
+            padding: 80px 20px 50px;
         }
+
 
         .small-title {
             font-size: 0.8rem;
@@ -92,26 +117,29 @@
             margin-bottom: 10px;
         }
 
+
         .page-header h1 {
-            font-size: 3.5rem;
-            font-weight: 500;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 600;
             line-height: 1.1;
         }
 
 
-        /* CONTENIDO */
+        /* SOBRE MÍ / STATEMENT */
 
         .about {
             width: 88%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px 0 100px;
+            padding: 20px 0 90px;
 
             display: grid;
             grid-template-columns: 0.9fr 1.1fr;
             gap: 70px;
             align-items: center;
         }
+
 
         .about-image {
             min-height: 520px;
@@ -125,15 +153,19 @@
             padding: 30px;
         }
 
+
         .about-image span {
             font-size: 0.9rem;
         }
 
+
         .about-text h2 {
-            font-size: 2rem;
-            font-weight: 500;
-            margin-bottom: 25px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin-bottom: 28px;
         }
+
 
         .about-text p {
             font-size: 1rem;
@@ -150,51 +182,88 @@
             text-align: center;
         }
 
+
         .quote p {
             max-width: 800px;
             margin: 0 auto;
-            font-size: 1.7rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
             line-height: 1.5;
         }
 
 
-        /* FORMACIÓN / PRÁCTICA */
+        /* EXPOSICIONES */
 
-        .practice {
+        .exhibitions {
             width: 88%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 90px 0;
+            padding: 90px 0 100px;
+        }
 
+
+        .exhibition {
+            margin-bottom: 80px;
+        }
+
+
+        .exhibition:last-child {
+            margin-bottom: 0;
+        }
+
+
+        .exhibition h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+
+        .exhibition-location {
+            color: #C96F78;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 25px;
+        }
+
+
+        .exhibition-photos {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .practice h2 {
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        .practice p {
-            max-width: 500px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
 
-        /* PIE */
+        .exhibition-photos a {
+            display: block;
+            overflow: hidden;
+        }
+
+
+        .exhibition-photos img {
+            display: block;
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+
+        .exhibition-photos a:hover img {
+            transform: scale(1.025);
+        }
+
+
+        /* FOOTER */
 
         footer {
-            background: #F0BBBB;
-            padding: 35px 6%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        footer p {
-            font-size: 0.85rem;
+            background: #E8A3A8;
+            border-top: 3px solid #C96F78;
+            text-align: center;
+            padding: 28px 20px;
+            font-size: 0.8rem;
         }
 
 
@@ -203,46 +272,44 @@
         @media (max-width: 850px) {
 
             header {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                gap: 20px;
+                height: 68px;
             }
 
-            .menu-toggle {
+
+            .menu-button {
                 display: block;
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                cursor: pointer;
-                color: #1A1412;
             }
+
 
             nav {
                 display: none;
-                flex-direction: column;
-                gap: 18px;
-
                 position: absolute;
-                top: 75px;
-                right: 6%;
-
-                background: #F0BBBB;
-                padding: 20px 25px;
+                top: 68px;
+                left: 0;
+                width: 100%;
+                background: #E8A3A8;
+                flex-direction: column;
+                gap: 20px;
+                padding: 25px;
+                border-bottom: 3px solid #C96F78;
                 z-index: 10;
             }
+
 
             nav.open {
                 display: flex;
             }
 
+
             .page-header {
-                padding: 45px 6% 30px;
+                padding: 55px 20px 35px;
             }
+
 
             .page-header h1 {
                 font-size: 3rem;
             }
+
 
             .about {
                 grid-template-columns: 1fr;
@@ -250,67 +317,91 @@
                 padding-bottom: 70px;
             }
 
+
             .about-image {
                 min-height: 400px;
             }
 
-            .practice {
-                grid-template-columns: 1fr;
-                gap: 45px;
+
+            .exhibitions {
                 padding: 70px 0;
             }
+
+
+            .exhibition-photos {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+
+            .exhibition-photos img {
+                height: auto;
+                max-height: 300px;
+            }
+
 
             .quote {
                 padding: 60px 8%;
             }
 
+
             .quote p {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
             }
 
-            footer {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
         }
 
 
         @media (max-width: 520px) {
 
             .page-header {
-                padding: 35px 6% 25px;
+                padding: 40px 6% 30px;
             }
+
 
             .page-header h1 {
                 font-size: 2.6rem;
             }
 
+
             .about {
                 width: 88%;
             }
+
 
             .about-image {
                 min-height: 330px;
             }
 
+
             .about-text h2 {
-                font-size: 1.7rem;
+                font-size: 2rem;
             }
+
 
             .quote {
                 padding: 50px 8%;
             }
 
+
             .quote p {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
             }
+
+
+            .exhibitions {
+                width: 88%;
+            }
+
         }
 
     </style>
+
 </head>
 
+
 <body>
+
 
     <!-- MENÚ -->
 
@@ -320,22 +411,46 @@
             Pilar Casquero Gilabert
         </a>
 
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-        <nav>
+        <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+
+        <nav id="mainNav">
+
+            <a href="index.html">Inicio</a>
 
             <a href="obras.html">Obras</a>
-            <a href="exposiciones.html">Exposiciones</a>
+
             <a href="sobre-mi.html">Sobre mí</a>
+
             <a href="encargos.html">Encargos</a>
+
             <a href="contacto.html">Contacto</a>
 
-            <a href="#" class="instagram" aria-label="Instagram">
+            <a href="https://www.instagram.com/pilarcasquerog/"
+               class="instagram"
+               target="_blank"
+               aria-label="Instagram">
 
                 <svg viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                    <circle cx="12" cy="12" r="4"></circle>
-                    <circle cx="17.5" cy="6.5" r="1"></circle>
+
+                    <rect x="3"
+                          y="3"
+                          width="18"
+                          height="18"
+                          rx="5">
+                    </rect>
+
+                    <circle cx="12"
+                            cy="12"
+                            r="4">
+                    </circle>
+
+                    <circle cx="17.5"
+                            cy="6.5"
+                            r="1">
+                    </circle>
+
                 </svg>
 
             </a>
@@ -345,9 +460,10 @@
     </header>
 
 
-    <!-- ENCABEZADO -->
-
     <main>
+
+
+        <!-- ENCABEZADO -->
 
         <section class="page-header">
 
@@ -360,49 +476,53 @@
         </section>
 
 
-        <!-- PRESENTACIÓN -->
+        <!-- STATEMENT -->
 
         <section class="about">
 
+
             <div class="about-image">
+
                 <span>
                     Aquí irá una fotografía
                 </span>
+
             </div>
 
 
             <div class="about-text">
 
-                <h2>Una pintura nacida de la percepción</h2>
+                <h2>Statement de artista</h2>
+
 
                 <p>
-                    Soy Pilar Casquero Gilabert, artista y pintora. Mi práctica
-                    se centra en explorar aquello que percibimos pero que no
-                    siempre puede representarse de forma directa.
+                    Mi práctica pictórica parte del interés por aquello que,
+                    aunque forma parte de nuestra experiencia, escapa a una
+                    representación directa: las emociones, la memoria, las
+                    sensaciones, los sueños y las imágenes mentales.
                 </p>
 
-                <p>
-                    Me interesa especialmente la relación entre percepción,
-                    memoria, emoción y experiencia. A través de la pintura
-                    busco transformar sensaciones e imágenes mentales en
-                    espacios visuales.
-                </p>
 
                 <p>
-                    Mi proceso parte habitualmente de fotografías, recuerdos
-                    o imágenes que transformo antes de llevarlas al lienzo.
-                    No busco reproducir literalmente una realidad, sino
-                    construir una imagen capaz de transmitir aquello que
-                    provoca o contiene.
+                    A través de la pintura exploro la relación entre percepción
+                    y experiencia subjetiva, transformando fotografías,
+                    recuerdos e imágenes en espacios que se sitúan entre lo
+                    real y lo imaginado. El color, la luz, la materia y la
+                    distorsión se convierten en herramientas para construir
+                    imágenes capaces de sugerir aquello que no puede verse
+                    literalmente.
                 </p>
 
+
                 <p>
-                    El color, la luz, la materia y la distorsión son algunos
-                    de los recursos que utilizo para acercarme a esas
-                    experiencias difíciles de expresar con palabras.
+                    Mi trabajo transita entre la figuración y la abstracción,
+                    buscando que la pintura no reproduzca únicamente una
+                    realidad visible, sino que pueda hacer presente una
+                    experiencia, una sensación o un estado perceptivo.
                 </p>
 
             </div>
+
 
         </section>
 
@@ -418,44 +538,83 @@
         </section>
 
 
-        <!-- PRÁCTICA -->
+        <!-- EXPOSICIONES -->
 
-        <section class="practice">
+        <section class="exhibitions">
 
-            <div>
 
-                <h2>Mi práctica</h2>
+            <!-- GRANADA -->
 
-                <p>
-                    Mi trabajo se mueve entre la figuración, la abstracción
-                    y diferentes formas de representación de espacios reales
-                    e imaginados. El agua, la naturaleza, la luz y las
-                    transformaciones de la percepción aparecen de manera
-                    recurrente en mi obra.
-                </p>
+            <div class="exhibition">
+
+                <h2>Exposición — Granada</h2>
+
+                <div class="exhibition-location">
+                    Granada
+                </div>
+
+
+                <div class="exhibition-photos">
+
+                    <a href="imagenes/obra19.jpg" target="_blank">
+                        <img src="imagenes/obra19.jpg"
+                             alt="Exposición en Granada — imagen provisional">
+                    </a>
+
+
+                    <a href="imagenes/obra11.jpg" target="_blank">
+                        <img src="imagenes/obra11.jpg"
+                             alt="Exposición en Granada — imagen provisional">
+                    </a>
+
+
+                    <a href="imagenes/obra2.jpg" target="_blank">
+                        <img src="imagenes/obra2.jpg"
+                             alt="Exposición en Granada — imagen provisional">
+                    </a>
+
+                </div>
 
             </div>
 
 
-            <div>
+            <!-- CÁDIZ -->
 
-                <h2>Interés artístico</h2>
+            <div class="exhibition">
 
-                <p>
-                    Mi investigación parte de una pregunta sencilla:
-                    ¿cómo representar aquello que sentimos, recordamos o
-                    imaginamos cuando no existe una imagen concreta que
-                    podamos observar?
-                </p>
+                <h2>Exposición — Cádiz</h2>
 
-                <p style="margin-top: 20px;">
-                    La pintura se convierte así en un medio para dar forma
-                    a experiencias subjetivas y hacerlas visibles.
-                </p>
+                <div class="exhibition-location">
+                    Cádiz
+                </div>
+
+
+                <div class="exhibition-photos">
+
+                    <a href="imagenes/obra19.jpg" target="_blank">
+                        <img src="imagenes/obra19.jpg"
+                             alt="Exposición en Cádiz — imagen provisional">
+                    </a>
+
+
+                    <a href="imagenes/obra11.jpg" target="_blank">
+                        <img src="imagenes/obra11.jpg"
+                             alt="Exposición en Cádiz — imagen provisional">
+                    </a>
+
+
+                    <a href="imagenes/obra2.jpg" target="_blank">
+                        <img src="imagenes/obra2.jpg"
+                             alt="Exposición en Cádiz — imagen provisional">
+                    </a>
+
+                </div>
 
             </div>
+
 
         </section>
+
 
     </main>
 
@@ -464,30 +623,22 @@
 
     <footer>
 
-        <p>
-            © Pilar Casquero Gilabert
-        </p>
-
-        <a href="#" class="instagram" aria-label="Instagram">
-
-            <svg viewBox="0 0 24 24">
-                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                <circle cx="12" cy="12" r="4"></circle>
-                <circle cx="17.5" cy="6.5" r="1"></circle>
-            </svg>
-
-        </a>
+        © Pilar Casquero Gilabert
 
     </footer>
 
 
-    <!-- MENÚ MÓVIL -->
-
     <script>
+
         function toggleMenu() {
-            document.querySelector("nav").classList.toggle("open");
+
+            document.getElementById("mainNav").classList.toggle("open");
+
         }
+
     </script>
 
+
 </body>
+
 </html>
