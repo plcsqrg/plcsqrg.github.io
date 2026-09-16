@@ -35,7 +35,9 @@
         }
 
 
-        /* MENÚ */
+        /* =========================
+           MENÚ
+        ========================= */
 
         header {
             height: 76px;
@@ -101,7 +103,9 @@
         }
 
 
-        /* ENCABEZADO */
+        /* =========================
+           ENCABEZADO
+        ========================= */
 
         .page-header {
             text-align: center;
@@ -126,7 +130,9 @@
         }
 
 
-        /* SOBRE MÍ / STATEMENT */
+        /* =========================
+           SOBRE MÍ
+        ========================= */
 
         .about {
             width: 88%;
@@ -174,7 +180,9 @@
         }
 
 
-        /* FRASE */
+        /* =========================
+           FRASE
+        ========================= */
 
         .quote {
             background: #F0BBBB;
@@ -192,7 +200,9 @@
         }
 
 
-        /* EXPOSICIONES */
+        /* =========================
+           EXPOSICIONES
+        ========================= */
 
         .exhibitions {
             width: 88%;
@@ -203,7 +213,7 @@
 
 
         .exhibition {
-            margin-bottom: 100px;
+            margin-bottom: 110px;
         }
 
 
@@ -225,17 +235,32 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
 
-        /* GALERÍA DE EXPOSICIÓN */
+        /* =========================
+           GALERÍA EXPOSICIONES
+        ========================= */
 
         .exhibition-photos {
+
+            /*
+             El conjunto completo es mucho más pequeño
+             que antes.
+            */
+
+            width: 55%;
+            max-width: 600px;
+
             display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
+
+            grid-template-columns: 1.8fr 1fr 1fr;
+
             grid-template-rows: auto auto;
-            gap: 20px;
+
+            gap: 14px;
+
             align-items: start;
         }
 
@@ -261,46 +286,35 @@
         }
 
 
-        /*
-
-        PRIMERA FOTO:
-        cartel vertical
-
-        */
+        /* CARTEL */
 
         .exhibition-photos .poster {
+
             grid-column: 1;
             grid-row: 1 / span 2;
+
         }
 
 
-        /*
-
-        FOTOS HORIZONTALES:
-        quedan juntas en la columna derecha
-
-        */
+        /* TRES FOTOS PEQUEÑAS */
 
         .exhibition-photos .horizontal {
-            grid-column: 2;
+            grid-column: auto;
         }
 
-
-        /*
-
-        CUARTA FOTO:
-        vertical, debajo de las horizontales
-
-        */
 
         .exhibition-photos .vertical-final {
-            grid-column: 1;
-            grid-row: 3;
-            width: 75%;
+
+            grid-column: 2 / span 2;
+            grid-row: 2;
+
+            width: 55%;
         }
 
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background: #E8A3A8;
@@ -311,7 +325,9 @@
         }
 
 
-        /* MÓVIL */
+        /* =========================
+           MÓVIL
+        ========================= */
 
         @media (max-width: 850px) {
 
@@ -372,22 +388,48 @@
             }
 
 
+            /*
+             En móvil hacemos las fotos
+             más grandes para que se puedan ver.
+            */
+
             .exhibition-photos {
-                display: flex;
-                flex-direction: column;
-                gap: 18px;
+
+                width: 75%;
+
+                display: grid;
+
+                grid-template-columns: 1fr 1fr;
+
+                gap: 14px;
             }
 
 
-            .exhibition-photos img {
+            .exhibition-photos .poster {
+
+                grid-column: 1 / span 2;
+                grid-row: auto;
+
+                width: 65%;
+                margin: 0 auto 5px;
+
+            }
+
+
+            .exhibition-photos .horizontal {
+
+                grid-column: auto;
                 width: 100%;
-                height: auto;
-                max-height: none;
+
             }
 
 
             .exhibition-photos .vertical-final {
-                width: 100%;
+
+                grid-column: 1 / span 2;
+                width: 45%;
+                margin: 0 auto;
+
             }
 
 
@@ -402,6 +444,10 @@
 
         }
 
+
+        /* =========================
+           MÓVIL PEQUEÑO
+        ========================= */
 
         @media (max-width: 520px) {
 
@@ -444,6 +490,27 @@
                 width: 88%;
             }
 
+
+            .exhibition-photos {
+
+                width: 85%;
+
+                grid-template-columns: 1fr 1fr;
+
+                gap: 10px;
+
+            }
+
+
+            .exhibition-photos .poster {
+                width: 70%;
+            }
+
+
+            .exhibition-photos .vertical-final {
+                width: 55%;
+            }
+
         }
 
     </style>
@@ -463,7 +530,9 @@
         </a>
 
 
-        <button class="menu-button" onclick="toggleMenu()">☰</button>
+        <button class="menu-button" onclick="toggleMenu()" aria-label="Abrir menú">
+            ☰
+        </button>
 
 
         <nav id="mainNav">
@@ -482,25 +551,29 @@
             <a href="https://www.instagram.com/pilarcasquerog/"
                class="instagram"
                target="_blank"
+               rel="noopener"
                aria-label="Instagram">
 
                 <svg viewBox="0 0 24 24">
 
-                    <rect x="3"
-                          y="3"
-                          width="18"
-                          height="18"
-                          rx="5">
+                    <rect
+                        x="3"
+                        y="3"
+                        width="18"
+                        height="18"
+                        rx="5">
                     </rect>
 
-                    <circle cx="12"
-                            cy="12"
-                            r="4">
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="4">
                     </circle>
 
-                    <circle cx="17.5"
-                            cy="6.5"
-                            r="1">
+                    <circle
+                        cx="17.5"
+                        cy="6.5"
+                        r="1">
                     </circle>
 
                 </svg>
@@ -528,7 +601,7 @@
         </section>
 
 
-        <!-- STATEMENT -->
+        <!-- SOBRE MÍ -->
 
         <section class="about">
 
@@ -593,7 +666,9 @@
         <section class="exhibitions">
 
 
-            <!-- GRANADA -->
+            <!-- =========================
+                 GRANADA
+            ========================= -->
 
             <div class="exhibition">
 
@@ -606,59 +681,67 @@
 
                 <div class="exhibition-photos">
 
-                    <!-- CARTEL VERTICAL -->
+
+                    <!-- CARTEL -->
 
                     <a href="imagenes/granada-cartel.jpg"
                        class="poster"
                        target="_blank">
 
-                        <img src="imagenes/granada-cartel.jpg"
-                             alt="Cartel de la exposición en Granada">
+                        <img
+                            src="imagenes/granada-cartel.jpg"
+                            alt="Cartel de la exposición en Granada">
 
                     </a>
 
 
-                    <!-- FOTO HORIZONTAL 1 -->
+                    <!-- FOTO 1 -->
 
                     <a href="imagenes/granada-sala1.jpg"
                        class="horizontal"
                        target="_blank">
 
-                        <img src="imagenes/granada-sala1.jpg"
-                             alt="Vista de la exposición en Granada">
+                        <img
+                            src="imagenes/granada-sala1.jpg"
+                            alt="Vista de la exposición en Granada">
 
                     </a>
 
 
-                    <!-- FOTO HORIZONTAL 2 -->
+                    <!-- FOTO 2 -->
 
                     <a href="imagenes/granada-sala2.jpg"
                        class="horizontal"
                        target="_blank">
 
-                        <img src="imagenes/granada-sala2.jpg"
-                             alt="Vista de la exposición en Granada">
+                        <img
+                            src="imagenes/granada-sala2.jpg"
+                            alt="Vista de la exposición en Granada">
 
                     </a>
 
 
-                    <!-- FOTO VERTICAL CON PÚBLICO -->
+                    <!-- FOTO 3 -->
 
                     <a href="imagenes/granada-publico.jpg"
                        class="vertical-final"
                        target="_blank">
 
-                        <img src="imagenes/granada-publico.jpg"
-                             alt="Público durante la exposición en Granada">
+                        <img
+                            src="imagenes/granada-publico.jpg"
+                            alt="Público durante la exposición en Granada">
 
                     </a>
+
 
                 </div>
 
             </div>
 
 
-            <!-- CÁDIZ -->
+            <!-- =========================
+                 CÁDIZ
+            ========================= -->
 
             <div class="exhibition">
 
@@ -671,52 +754,58 @@
 
                 <div class="exhibition-photos">
 
-                    <!-- CARTEL VERTICAL -->
+
+                    <!-- CARTEL -->
 
                     <a href="imagenes/cadiz-cartel.jpg"
                        class="poster"
                        target="_blank">
 
-                        <img src="imagenes/cadiz-cartel.jpg"
-                             alt="Cartel de la exposición en Cádiz">
+                        <img
+                            src="imagenes/cadiz-cartel.jpg"
+                            alt="Cartel de la exposición en Cádiz">
 
                     </a>
 
 
-                    <!-- FOTO HORIZONTAL 1 -->
+                    <!-- FOTO 1 -->
 
                     <a href="imagenes/cadiz-sala1.jpg"
                        class="horizontal"
                        target="_blank">
 
-                        <img src="imagenes/cadiz-sala1.jpg"
-                             alt="Vista de la exposición en Cádiz">
+                        <img
+                            src="imagenes/cadiz-sala1.jpg"
+                            alt="Vista de la exposición en Cádiz">
 
                     </a>
 
 
-                    <!-- FOTO HORIZONTAL 2 -->
+                    <!-- FOTO 2 -->
 
                     <a href="imagenes/cadiz-sala2.jpg"
                        class="horizontal"
                        target="_blank">
 
-                        <img src="imagenes/cadiz-sala2.jpg"
-                             alt="Vista de la exposición en Cádiz">
+                        <img
+                            src="imagenes/cadiz-sala2.jpg"
+                            alt="Vista de la exposición en Cádiz">
 
                     </a>
 
 
-                    <!-- FOTO VERTICAL CON PÚBLICO -->
+                    <!-- FOTO 3 -->
 
                     <a href="imagenes/cadiz-publico.jpg"
                        class="vertical-final"
                        target="_blank">
 
-                        <img src="imagenes/cadiz-publico.jpg"
-                             alt="Público durante la exposición en Cádiz">
+                        <img
+                            src="imagenes/cadiz-publico.jpg"
+                            alt="Público durante la exposición en Cádiz">
 
                     </a>
+
 
                 </div>
 
@@ -729,7 +818,7 @@
     </main>
 
 
-    <!-- PIE -->
+    <!-- FOOTER -->
 
     <footer>
 
@@ -742,7 +831,9 @@
 
         function toggleMenu() {
 
-            document.getElementById("mainNav").classList.toggle("open");
+            document
+                .getElementById("mainNav")
+                .classList.toggle("open");
 
         }
 
