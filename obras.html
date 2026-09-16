@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -16,7 +17,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #F9E6E1;
             color: #1A1412;
         }
@@ -26,7 +27,10 @@
             text-decoration: none;
         }
 
-        /* HEADER */
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             height: 76px;
@@ -71,7 +75,10 @@
             color: #1A1412;
         }
 
-        /* CABECERA DE PÁGINA */
+
+        /* =========================
+           CABECERA DE PÁGINA
+        ========================= */
 
         .page-header {
             text-align: center;
@@ -100,7 +107,10 @@
             font-size: 1rem;
         }
 
-        /* FILTROS */
+
+        /* =========================
+           FILTROS
+        ========================= */
 
         .filters {
             display: flex;
@@ -117,7 +127,7 @@
             color: #1A1412;
             padding: 10px 22px;
             border-radius: 30px;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 0.85rem;
             font-weight: 700;
             cursor: pointer;
@@ -130,7 +140,10 @@
             color: #F9E6E1;
         }
 
-        /* GALERÍA */
+
+        /* =========================
+           GALERÍA
+        ========================= */
 
         .gallery {
             columns: 3 280px;
@@ -141,7 +154,8 @@
             padding-bottom: 80px;
         }
 
-        .work {
+        .work,
+        .work-pair {
             display: inline-block;
             width: 100%;
             margin-bottom: 35px;
@@ -180,15 +194,10 @@
             color: #5F4F4B;
         }
 
-        /* PAREJAS */
 
-        .work-pair {
-            display: inline-block;
-            width: 100%;
-            margin-bottom: 35px;
-            break-inside: avoid;
-            vertical-align: top;
-        }
+        /* =========================
+           PAREJAS
+        ========================= */
 
         .work-pair .work {
             display: block;
@@ -200,13 +209,19 @@
             margin-bottom: 0;
         }
 
-        /* OCULTAR */
+
+        /* =========================
+           OCULTAR
+        ========================= */
 
         .hidden {
             display: none !important;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background: #E8A3A8;
@@ -216,12 +231,15 @@
             font-size: 0.8rem;
         }
 
-        /* MÓVIL */
+
+        /* =========================
+           MÓVIL
+        ========================= */
 
         @media (max-width: 700px) {
 
             header {
-                height: 70px;
+                height: 68px;
                 padding: 0 6%;
             }
 
@@ -236,7 +254,7 @@
             nav {
                 display: none;
                 position: absolute;
-                top: 70px;
+                top: 68px;
                 left: 0;
                 width: 100%;
                 background: #E8A3A8;
@@ -282,11 +300,26 @@
             .work-pair {
                 margin-bottom: 40px;
             }
+
+            .work-pair .work {
+                margin-bottom: 40px;
+            }
+
+            .work-pair .work:last-child {
+                margin-bottom: 0;
+            }
         }
+
     </style>
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -294,27 +327,54 @@
         Pilar Casquero Gilabert
     </a>
 
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="Abrir menú">
+        ☰
+    </button>
 
     <nav id="mainNav">
+
         <a href="index.html">Inicio</a>
+
         <a href="obras.html">Obras</a>
+
         <a href="sobre-mi.html">Sobre mí</a>
+
         <a href="encargos.html">Encargos</a>
+
         <a href="contacto.html">Contacto</a>
-        <a href="https://www.instagram.com/pilarcasquerog/" target="_blank">Instagram</a>
+
+        <a
+            href="https://www.instagram.com/pilarcasquerog/"
+            target="_blank"
+            rel="noopener">
+            Instagram
+        </a>
+
     </nav>
 
 </header>
 
 
+
+<!-- =========================
+     CONTENIDO
+========================= -->
+
 <main>
+
 
     <section class="page-header">
 
-        <div class="small-title">Pintura contemporánea</div>
+        <div class="small-title">
+            Pintura contemporánea
+        </div>
 
-        <h1>Obras</h1>
+        <h1>
+            Obras
+        </h1>
 
         <p>
             Una selección de obras realizadas entre 2023 y 2026,
@@ -325,39 +385,54 @@
     </section>
 
 
+
+    <!-- =========================
+         FILTROS
+    ========================= -->
+
     <div class="filters">
 
-        <button class="filter-button active"
-                onclick="filterWorks('todas', this)">
+        <button
+            class="filter-button active"
+            onclick="filterWorks('todas', this)">
             Todas
         </button>
 
-        <button class="filter-button"
-                onclick="filterWorks('figurativa', this)">
+        <button
+            class="filter-button"
+            onclick="filterWorks('figurativa', this)">
             Figurativas
         </button>
 
-        <button class="filter-button"
-                onclick="filterWorks('abstracta', this)">
+        <button
+            class="filter-button"
+            onclick="filterWorks('abstracta', this)">
             Abstractas
         </button>
 
     </div>
 
 
+
+    <!-- =========================
+         GALERÍA
+    ========================= -->
+
     <section class="gallery" id="gallery">
 
 
         <!-- OBRA 1 -->
 
-        <article class="work"
-                 data-category="abstracta"
-                 data-order="1">
+        <article
+            class="work"
+            data-category="abstracta"
+            data-order="1">
 
             <a href="obras/obra1.html">
 
-                <img src="imagenes/obra1.jpg"
-                     alt="Océano III">
+                <img
+                    src="imagenes/obra1.jpg"
+                    alt="Océano III">
 
                 <div class="work-info">
 
@@ -376,16 +451,19 @@
         </article>
 
 
+
         <!-- OBRA 2 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="2">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="2">
 
             <a href="obras/obra2.html">
 
-                <img src="imagenes/obra2.jpg"
-                     alt="Refracción de un pez">
+                <img
+                    src="imagenes/obra2.jpg"
+                    alt="Refracción de un pez">
 
                 <div class="work-info">
 
@@ -404,16 +482,19 @@
         </article>
 
 
+
         <!-- OBRA 3 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="3">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="3">
 
             <a href="obras/obra3.html">
 
-                <img src="imagenes/obra3.jpg"
-                     alt="Un instant suspendu">
+                <img
+                    src="imagenes/obra3.jpg"
+                    alt="Un instant suspendu">
 
                 <div class="work-info">
 
@@ -432,16 +513,19 @@
         </article>
 
 
+
         <!-- OBRA 4 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="4">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="4">
 
             <a href="obras/obra4.html">
 
-                <img src="imagenes/obra4.jpg"
-                     alt="Marguerites dans la cuisine">
+                <img
+                    src="imagenes/obra4.jpg"
+                    alt="Marguerites dans la cuisine">
 
                 <div class="work-info">
 
@@ -460,16 +544,19 @@
         </article>
 
 
+
         <!-- OBRA 5 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="5">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="5">
 
             <a href="obras/obra5.html">
 
-                <img src="imagenes/obra5.jpg"
-                     alt="Jarra del pez">
+                <img
+                    src="imagenes/obra5.jpg"
+                    alt="Jarra del pez">
 
                 <div class="work-info">
 
@@ -488,20 +575,24 @@
         </article>
 
 
+
         <!-- OBRAS 6 + 18 -->
 
-        <div class="work-pair"
-             data-pair-category="abstracta"
-             data-order="6">
+        <div
+            class="work-pair"
+            data-pair-category="abstracta"
+            data-order="6">
 
-            <article class="work"
-                     data-category="abstracta"
-                     data-order="6">
+            <article
+                class="work"
+                data-category="abstracta"
+                data-order="6">
 
                 <a href="obras/obra6.html">
 
-                    <img src="imagenes/obra6.jpg"
-                         alt="Paisaje en formación (2/2)">
+                    <img
+                        src="imagenes/obra6.jpg"
+                        alt="Paisaje en formación (2/2)">
 
                     <div class="work-info">
 
@@ -520,14 +611,16 @@
             </article>
 
 
-            <article class="work"
-                     data-category="abstracta"
-                     data-order="18">
+            <article
+                class="work"
+                data-category="abstracta"
+                data-order="18">
 
                 <a href="obras/obra18.html">
 
-                    <img src="imagenes/obra18.jpg"
-                         alt="Paisaje en formación (1/2)">
+                    <img
+                        src="imagenes/obra18.jpg"
+                        alt="Paisaje en formación (1/2)">
 
                     <div class="work-info">
 
@@ -548,20 +641,24 @@
         </div>
 
 
+
         <!-- OBRAS 7 + 12 -->
 
-        <div class="work-pair"
-             data-pair-category="abstracta"
-             data-order="7">
+        <div
+            class="work-pair"
+            data-pair-category="abstracta"
+            data-order="7">
 
-            <article class="work"
-                     data-category="abstracta"
-                     data-order="7">
+            <article
+                class="work"
+                data-category="abstracta"
+                data-order="7">
 
                 <a href="obras/obra7.html">
 
-                    <img src="imagenes/obra7.jpg"
-                         alt="Blanco (1/2)">
+                    <img
+                        src="imagenes/obra7.jpg"
+                        alt="Blanco (1/2)">
 
                     <div class="work-info">
 
@@ -580,14 +677,16 @@
             </article>
 
 
-            <article class="work"
-                     data-category="abstracta"
-                     data-order="12">
+            <article
+                class="work"
+                data-category="abstracta"
+                data-order="12">
 
                 <a href="obras/obra12.html">
 
-                    <img src="imagenes/obra12.jpg"
-                         alt="Blanco (2/2)">
+                    <img
+                        src="imagenes/obra12.jpg"
+                        alt="Blanco (2/2)">
 
                     <div class="work-info">
 
@@ -608,16 +707,19 @@
         </div>
 
 
+
         <!-- OBRA 8 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="8">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="8">
 
             <a href="obras/obra8.html">
 
-                <img src="imagenes/obra8.jpg"
-                     alt="ECM">
+                <img
+                    src="imagenes/obra8.jpg"
+                    alt="ECM">
 
                 <div class="work-info">
 
@@ -636,16 +738,19 @@
         </article>
 
 
+
         <!-- OBRA 9 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="9">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="9">
 
             <a href="obras/obra9.html">
 
-                <img src="imagenes/obra9.jpg"
-                     alt="Parte de un todo">
+                <img
+                    src="imagenes/obra9.jpg"
+                    alt="Parte de un todo">
 
                 <div class="work-info">
 
@@ -664,16 +769,19 @@
         </article>
 
 
+
         <!-- OBRA 10 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="10">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="10">
 
             <a href="obras/obra10.html">
 
-                <img src="imagenes/obra10.jpg"
-                     alt="Tres haces">
+                <img
+                    src="imagenes/obra10.jpg"
+                    alt="Tres haces">
 
                 <div class="work-info">
 
@@ -692,16 +800,19 @@
         </article>
 
 
+
         <!-- OBRA 11 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="11">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="11">
 
             <a href="obras/obra11.html">
 
-                <img src="imagenes/obra11.jpg"
-                     alt="Cueva">
+                <img
+                    src="imagenes/obra11.jpg"
+                    alt="Cueva">
 
                 <div class="work-info">
 
@@ -720,16 +831,19 @@
         </article>
 
 
+
         <!-- OBRA 13 -->
 
-        <article class="work"
-                 data-category="abstracta"
-                 data-order="13">
+        <article
+            class="work"
+            data-category="abstracta"
+            data-order="13">
 
             <a href="obras/obra13.html">
 
-                <img src="imagenes/obra13.jpg"
-                     alt="Eléctrica">
+                <img
+                    src="imagenes/obra13.jpg"
+                    alt="Eléctrica">
 
                 <div class="work-info">
 
@@ -748,16 +862,19 @@
         </article>
 
 
+
         <!-- OBRA 14 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="14">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="14">
 
             <a href="obras/obra14.html">
 
-                <img src="imagenes/obra14.jpg"
-                     alt="Mico">
+                <img
+                    src="imagenes/obra14.jpg"
+                    alt="Mico">
 
                 <div class="work-info">
 
@@ -776,16 +893,19 @@
         </article>
 
 
+
         <!-- OBRA 15 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="15">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="15">
 
             <a href="obras/obra15.html">
 
-                <img src="imagenes/obra15.jpg"
-                     alt="Océano I">
+                <img
+                    src="imagenes/obra15.jpg"
+                    alt="Océano I">
 
                 <div class="work-info">
 
@@ -804,16 +924,19 @@
         </article>
 
 
+
         <!-- OBRA 16 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="16">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="16">
 
             <a href="obras/obra16.html">
 
-                <img src="imagenes/obra16.jpg"
-                     alt="Pingüinos">
+                <img
+                    src="imagenes/obra16.jpg"
+                    alt="Pingüinos">
 
                 <div class="work-info">
 
@@ -832,16 +955,19 @@
         </article>
 
 
+
         <!-- OBRA 17 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="17">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="17">
 
             <a href="obras/obra17.html">
 
-                <img src="imagenes/obra17.jpg"
-                     alt="Corbeau">
+                <img
+                    src="imagenes/obra17.jpg"
+                    alt="Corbeau">
 
                 <div class="work-info">
 
@@ -860,16 +986,19 @@
         </article>
 
 
+
         <!-- OBRA 19 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="19">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="19">
 
             <a href="obras/obra19.html">
 
-                <img src="imagenes/obra19.jpg"
-                     alt="Las tres gracias">
+                <img
+                    src="imagenes/obra19.jpg"
+                    alt="Las tres gracias">
 
                 <div class="work-info">
 
@@ -888,16 +1017,19 @@
         </article>
 
 
+
         <!-- OBRA 20 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="20">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="20">
 
             <a href="obras/obra20.html">
 
-                <img src="imagenes/obra20.jpg"
-                     alt="rrss">
+                <img
+                    src="imagenes/obra20.jpg"
+                    alt="rrss">
 
                 <div class="work-info">
 
@@ -916,16 +1048,19 @@
         </article>
 
 
+
         <!-- OBRA 21 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="21">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="21">
 
             <a href="obras/obra21.html">
 
-                <img src="imagenes/obra21.jpg"
-                     alt="Gallos de pelea">
+                <img
+                    src="imagenes/obra21.jpg"
+                    alt="Gallos de pelea">
 
                 <div class="work-info">
 
@@ -944,16 +1079,19 @@
         </article>
 
 
+
         <!-- OBRA 22 -->
 
-        <article class="work"
-                 data-category="abstracta"
-                 data-order="22">
+        <article
+            class="work"
+            data-category="abstracta"
+            data-order="22">
 
             <a href="obras/obra22.html">
 
-                <img src="imagenes/obra22.jpg"
-                     alt="Océano IV">
+                <img
+                    src="imagenes/obra22.jpg"
+                    alt="Océano IV">
 
                 <div class="work-info">
 
@@ -972,16 +1110,19 @@
         </article>
 
 
+
         <!-- OBRA 24 -->
 
-        <article class="work"
-                 data-category="figurativa"
-                 data-order="24">
+        <article
+            class="work"
+            data-category="figurativa"
+            data-order="24">
 
             <a href="obras/obra24.html">
 
-                <img src="imagenes/obra24.jpg"
-                     alt="Océano II">
+                <img
+                    src="imagenes/obra24.jpg"
+                    alt="Océano II">
 
                 <div class="work-info">
 
@@ -1005,15 +1146,25 @@
 </main>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
     © Pilar Casquero Gilabert
 </footer>
 
 
+
 <script>
 
     function toggleMenu() {
-        document.getElementById("mainNav").classList.toggle("open");
+
+        document
+            .getElementById("mainNav")
+            .classList.toggle("open");
+
     }
 
 
@@ -1024,25 +1175,28 @@
         const items = Array.from(gallery.children);
 
 
-        /* Cambiar botón activo */
+        /* BOTÓN ACTIVO */
 
-        document.querySelectorAll(".filter-button").forEach(function(btn) {
-            btn.classList.remove("active");
-        });
+        document
+            .querySelectorAll(".filter-button")
+            .forEach(function(btn) {
+
+                btn.classList.remove("active");
+
+            });
 
         button.classList.add("active");
 
 
-        /* Ordenar todos los elementos según data-order */
+        /* ORDENAR */
 
         items.sort(function(a, b) {
 
-            return Number(a.dataset.order) - Number(b.dataset.order);
+            return Number(a.dataset.order) -
+                   Number(b.dataset.order);
 
         });
 
-
-        /* Volver a colocarlos en el HTML */
 
         items.forEach(function(item) {
 
@@ -1051,7 +1205,7 @@
         });
 
 
-        /* Mostrar u ocultar */
+        /* FILTRAR */
 
         items.forEach(function(item) {
 
@@ -1061,7 +1215,10 @@
                     category === "todas" ||
                     item.dataset.pairCategory === category;
 
-                item.classList.toggle("hidden", !showPair);
+                item.classList.toggle(
+                    "hidden",
+                    !showPair
+                );
 
             } else {
 
@@ -1069,7 +1226,10 @@
                     category === "todas" ||
                     item.dataset.category === category;
 
-                item.classList.toggle("hidden", !showWork);
+                item.classList.toggle(
+                    "hidden",
+                    !showWork
+                );
 
             }
 
@@ -1078,31 +1238,38 @@
     }
 
 
-    /* Orden inicial */
+    /* ORDEN INICIAL */
 
-    window.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener(
+        "DOMContentLoaded",
+        function() {
 
-        const gallery = document.getElementById("gallery");
+            const gallery =
+                document.getElementById("gallery");
 
-        const items = Array.from(gallery.children);
-
-
-        items.sort(function(a, b) {
-
-            return Number(a.dataset.order) - Number(b.dataset.order);
-
-        });
+            const items =
+                Array.from(gallery.children);
 
 
-        items.forEach(function(item) {
+            items.sort(function(a, b) {
 
-            gallery.appendChild(item);
+                return Number(a.dataset.order) -
+                       Number(b.dataset.order);
 
-        });
+            });
 
-    });
+
+            items.forEach(function(item) {
+
+                gallery.appendChild(item);
+
+            });
+
+        }
+    );
 
 </script>
+
 
 </body>
 </html>
