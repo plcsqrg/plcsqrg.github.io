@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -26,7 +26,6 @@
             color: inherit;
             text-decoration: none;
         }
-
 
         /* HEADER */
 
@@ -64,38 +63,40 @@
             opacity: 0.55;
         }
 
+        .instagram {
+            font-size: 1.15rem;
+        }
+
         .menu-button {
             display: none;
-            background: none;
             border: none;
+            background: none;
             font-size: 1.8rem;
             cursor: pointer;
             color: #1A1412;
         }
 
-
-        /* CABECERA DE LA PÁGINA */
+        /* CABECERA DE PÁGINA */
 
         .page-header {
             text-align: center;
-            padding: 80px 5% 55px;
+            padding: 80px 20px 45px;
         }
 
         .page-header h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            margin-bottom: 18px;
+            font-size: 4rem;
+            margin-bottom: 15px;
         }
 
         .page-header p {
-            max-width: 680px;
+            max-width: 650px;
             margin: 0 auto;
-            line-height: 1.7;
             font-size: 1rem;
+            line-height: 1.7;
         }
 
-
-        /* BOTONES */
+        /* FILTROS */
 
         .filters {
             display: flex;
@@ -123,7 +124,6 @@
             color: #F9E6E1;
         }
 
-
         /* GALERÍA */
 
         .gallery {
@@ -140,45 +140,34 @@
             vertical-align: top;
         }
 
-        .work.hidden {
-            display: none;
-        }
-
-        .work-image {
-            width: 100%;
-            background: #EED0CC;
-            overflow: hidden;
-        }
-
-        .work-image img {
+        .work img {
+            display: block;
             width: 100%;
             height: auto;
-            display: block;
-            transition: transform 0.35s ease;
+            border-radius: 2px;
+            transition: transform 0.3s ease;
         }
 
-        .work:hover .work-image img {
-            transform: scale(1.025);
+        .work:hover img {
+            transform: scale(1.015);
         }
 
         .work-info {
-            padding: 13px 2px 0;
+            padding-top: 12px;
         }
 
-        .work-info h3 {
+        .work-info h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             margin-bottom: 4px;
         }
 
         .work-info p {
-            font-size: 0.8rem;
-            color: #6f5b58;
-            line-height: 1.4;
+            font-size: 0.82rem;
+            opacity: 0.75;
         }
 
-
-        /* PAREJAS: MISMO TAMAÑO Y UNA DEBAJO DE OTRA */
+        /* PAREJAS DE OBRAS */
 
         .work-pair {
             display: inline-block;
@@ -198,28 +187,28 @@
             margin-bottom: 0;
         }
 
-        .work-pair.hidden {
-            display: none;
-        }
+        /* OCULTAR */
 
+        .hidden {
+            display: none !important;
+        }
 
         /* FOOTER */
 
         footer {
             background: #E8A3A8;
-            text-align: center;
-            padding: 28px 5%;
-            font-size: 0.8rem;
             border-top: 3px solid #C96F78;
+            text-align: center;
+            padding: 28px 20px;
+            font-size: 0.8rem;
         }
-
 
         /* MÓVIL */
 
-        @media (max-width: 760px) {
+        @media (max-width: 700px) {
 
             header {
-                height: 70px;
+                height: 68px;
             }
 
             .menu-button {
@@ -229,14 +218,13 @@
             nav {
                 display: none;
                 position: absolute;
-                top: 70px;
+                top: 68px;
                 left: 0;
                 width: 100%;
                 background: #E8A3A8;
                 flex-direction: column;
-                align-items: center;
-                gap: 22px;
-                padding: 25px 0 30px;
+                gap: 20px;
+                padding: 25px;
                 border-bottom: 3px solid #C96F78;
                 z-index: 10;
             }
@@ -246,11 +234,11 @@
             }
 
             .page-header {
-                padding: 60px 7% 45px;
+                padding: 55px 20px 35px;
             }
 
             .page-header h1 {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
 
             .gallery {
@@ -258,17 +246,19 @@
                 padding: 0 7% 60px;
             }
 
-            .work-pair {
-                width: 100%;
+            .filters {
+                margin-bottom: 40px;
+                padding: 0 20px;
+            }
+
+            .filter-button {
+                padding: 9px 18px;
             }
         }
-
     </style>
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -276,32 +266,18 @@
         Pilar Casquero Gilabert
     </div>
 
-    <button class="menu-button" onclick="toggleMenu()">
-        ☰
-    </button>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
 
     <nav id="mainNav">
-
         <a href="index.html">Inicio</a>
-
         <a href="obras.html">Obras</a>
-
-        <a href="sobre-mi.html">Sobre mí</a>
-
+        <a href="sobremi.html">Sobre mí</a>
         <a href="encargos.html">Encargos</a>
-
         <a href="contacto.html">Contacto</a>
-
-        <a href="https://www.instagram.com/pilarcasquerog/"
-           target="_blank"
-           rel="noopener noreferrer">
-            Instagram
-        </a>
-
+        <a class="instagram" href="https://www.instagram.com/pilarcasquerog/" target="_blank">Instagram</a>
     </nav>
 
 </header>
-
 
 
 <section class="page-header">
@@ -309,12 +285,12 @@
     <h1>Obras</h1>
 
     <p>
-        Una selección de mi producción pictórica, organizada según diferentes
-        aproximaciones a la representación, la materia y la percepción.
+        Una selección de obras realizadas en diferentes momentos y procesos,
+        explorando la percepción, la memoria, las emociones y aquello que
+        permanece entre lo real y lo imaginado.
     </p>
 
 </section>
-
 
 
 <div class="filters">
@@ -337,10 +313,7 @@
 </div>
 
 
-
 <main class="gallery" id="gallery">
-
-
 
     <!-- OBRA 1 -->
 
@@ -349,17 +322,14 @@
        data-category="abstracta"
        data-order="1">
 
-        <div class="work-image">
-            <img src="imagenes/obra1.jpg" alt="Océano III">
-        </div>
+        <img src="imagenes/obra1.jpg" alt="Océano III">
 
         <div class="work-info">
-            <h3>Océano III</h3>
+            <h2>Océano III</h2>
             <p>300 × 200 cm · 2026</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 2 -->
@@ -369,17 +339,14 @@
        data-category="figurativa"
        data-order="2">
 
-        <div class="work-image">
-            <img src="imagenes/obra2.jpg" alt="Refracción de un pez">
-        </div>
+        <img src="imagenes/obra2.jpg" alt="Refracción de un pez">
 
         <div class="work-info">
-            <h3>Refracción de un pez</h3>
+            <h2>Refracción de un pez</h2>
             <p>30 × 24 cm · 2025</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 3 -->
@@ -389,17 +356,14 @@
        data-category="figurativa"
        data-order="3">
 
-        <div class="work-image">
-            <img src="imagenes/obra3.jpg" alt="Un instant suspendu">
-        </div>
+        <img src="imagenes/obra3.jpg" alt="Un instant suspendu">
 
         <div class="work-info">
-            <h3>Un instant suspendu</h3>
+            <h2>Un instant suspendu</h2>
             <p>30 × 24 cm · 2025</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 4 -->
@@ -409,17 +373,14 @@
        data-category="figurativa"
        data-order="4">
 
-        <div class="work-image">
-            <img src="imagenes/obra4.jpg" alt="Marguerites dans la cuisine">
-        </div>
+        <img src="imagenes/obra4.jpg" alt="Marguerites dans la cuisine">
 
         <div class="work-info">
-            <h3>Marguerites dans la cuisine</h3>
+            <h2>Marguerites dans la cuisine</h2>
             <p>40 × 40 cm · 2024</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 5 -->
@@ -429,37 +390,31 @@
        data-category="figurativa"
        data-order="5">
 
-        <div class="work-image">
-            <img src="imagenes/obra5.jpg" alt="Jarra del pez">
-        </div>
+        <img src="imagenes/obra5.jpg" alt="Jarra del pez">
 
         <div class="work-info">
-            <h3>Jarra del pez</h3>
+            <h2>Jarra del pez</h2>
             <p>80 × 60 cm · 2023</p>
         </div>
 
     </a>
 
 
-
-    <!-- OBRAS 6 Y 18: PAISAJE EN FORMACIÓN -->
+    <!-- OBRAS 6 Y 18 -->
 
     <div class="work-pair"
          data-pair-category="abstracta"
          data-order="6">
 
-
         <a href="obras/obra6.html"
            class="work"
-           data-category="abstracta">
+           data-category="abstracta"
+           data-order="6">
 
-            <div class="work-image">
-                <img src="imagenes/obra6.jpg"
-                     alt="Paisaje en formación (2/2)">
-            </div>
+            <img src="imagenes/obra6.jpg" alt="Paisaje en formación (2/2)">
 
             <div class="work-info">
-                <h3>Paisaje en formación (2/2)</h3>
+                <h2>Paisaje en formación (2/2)</h2>
                 <p>46 × 46 cm · 2025</p>
             </div>
 
@@ -468,43 +423,36 @@
 
         <a href="obras/obra18.html"
            class="work"
-           data-category="abstracta">
+           data-category="abstracta"
+           data-order="18">
 
-            <div class="work-image">
-                <img src="imagenes/obra18.jpg"
-                     alt="Paisaje en formación (1/2)">
-            </div>
+            <img src="imagenes/obra18.jpg" alt="Paisaje en formación (1/2)">
 
             <div class="work-info">
-                <h3>Paisaje en formación (1/2)</h3>
+                <h2>Paisaje en formación (1/2)</h2>
                 <p>46 × 46 cm · 2025</p>
             </div>
 
         </a>
 
-
     </div>
 
 
-
-    <!-- OBRAS 7 Y 12: BLANCO -->
+    <!-- OBRAS 7 Y 12 -->
 
     <div class="work-pair"
          data-pair-category="abstracta"
          data-order="7">
 
-
         <a href="obras/obra7.html"
            class="work"
-           data-category="abstracta">
+           data-category="abstracta"
+           data-order="7">
 
-            <div class="work-image">
-                <img src="imagenes/obra7.jpg"
-                     alt="Blanco (1/2)">
-            </div>
+            <img src="imagenes/obra7.jpg" alt="Blanco (1/2)">
 
             <div class="work-info">
-                <h3>Blanco (1/2)</h3>
+                <h2>Blanco (1/2)</h2>
                 <p>200 × 200 cm · 2026</p>
             </div>
 
@@ -513,23 +461,19 @@
 
         <a href="obras/obra12.html"
            class="work"
-           data-category="abstracta">
+           data-category="abstracta"
+           data-order="12">
 
-            <div class="work-image">
-                <img src="imagenes/obra12.jpg"
-                     alt="Blanco (2/2)">
-            </div>
+            <img src="imagenes/obra12.jpg" alt="Blanco (2/2)">
 
             <div class="work-info">
-                <h3>Blanco (2/2)</h3>
+                <h2>Blanco (2/2)</h2>
                 <p>200 × 200 cm · 2026</p>
             </div>
 
         </a>
 
-
     </div>
-
 
 
     <!-- OBRA 8 -->
@@ -539,17 +483,14 @@
        data-category="figurativa"
        data-order="8">
 
-        <div class="work-image">
-            <img src="imagenes/obra8.jpg" alt="ECM">
-        </div>
+        <img src="imagenes/obra8.jpg" alt="ECM">
 
         <div class="work-info">
-            <h3>ECM</h3>
+            <h2>ECM</h2>
             <p>80 × 65 cm · 2026</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 9 -->
@@ -559,17 +500,14 @@
        data-category="figurativa"
        data-order="9">
 
-        <div class="work-image">
-            <img src="imagenes/obra9.jpg" alt="Parte de un todo">
-        </div>
+        <img src="imagenes/obra9.jpg" alt="Parte de un todo">
 
         <div class="work-info">
-            <h3>Parte de un todo</h3>
+            <h2>Parte de un todo</h2>
             <p>80 × 60 cm · 2025</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 10 -->
@@ -579,17 +517,14 @@
        data-category="figurativa"
        data-order="10">
 
-        <div class="work-image">
-            <img src="imagenes/obra10.jpg" alt="Tres haces">
-        </div>
+        <img src="imagenes/obra10.jpg" alt="Tres haces">
 
         <div class="work-info">
-            <h3>Tres haces</h3>
+            <h2>Tres haces</h2>
             <p>100 × 80 cm · 2025</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 11 -->
@@ -599,17 +534,14 @@
        data-category="figurativa"
        data-order="11">
 
-        <div class="work-image">
-            <img src="imagenes/obra11.jpg" alt="Cueva">
-        </div>
+        <img src="imagenes/obra11.jpg" alt="Cueva">
 
         <div class="work-info">
-            <h3>Cueva</h3>
+            <h2>Cueva</h2>
             <p>100 × 140 cm · 2026</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 13 -->
@@ -619,17 +551,14 @@
        data-category="abstracta"
        data-order="13">
 
-        <div class="work-image">
-            <img src="imagenes/obra13.jpg" alt="Eléctrica">
-        </div>
+        <img src="imagenes/obra13.jpg" alt="Eléctrica">
 
         <div class="work-info">
-            <h3>Eléctrica</h3>
+            <h2>Eléctrica</h2>
             <p>195 × 130 cm · 2026</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 14 -->
@@ -639,17 +568,14 @@
        data-category="figurativa"
        data-order="14">
 
-        <div class="work-image">
-            <img src="imagenes/obra14.jpg" alt="Mico">
-        </div>
+        <img src="imagenes/obra14.jpg" alt="Mico">
 
         <div class="work-info">
-            <h3>Mico</h3>
+            <h2>Mico</h2>
             <p>60 × 80 cm · 2025</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 15 -->
@@ -659,17 +585,14 @@
        data-category="figurativa"
        data-order="15">
 
-        <div class="work-image">
-            <img src="imagenes/obra15.jpg" alt="Océano I">
-        </div>
+        <img src="imagenes/obra15.jpg" alt="Océano I">
 
         <div class="work-info">
-            <h3>Océano I</h3>
+            <h2>Océano I</h2>
             <p>120 × 60 cm · 2023</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 16 -->
@@ -679,17 +602,14 @@
        data-category="figurativa"
        data-order="16">
 
-        <div class="work-image">
-            <img src="imagenes/obra16.jpg" alt="Pingüinos">
-        </div>
+        <img src="imagenes/obra16.jpg" alt="Pingüinos">
 
         <div class="work-info">
-            <h3>Pingüinos</h3>
+            <h2>Pingüinos</h2>
             <p>80 × 60 cm · 2024</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 17 -->
@@ -699,17 +619,14 @@
        data-category="figurativa"
        data-order="17">
 
-        <div class="work-image">
-            <img src="imagenes/obra17.jpg" alt="Corbeau">
-        </div>
+        <img src="imagenes/obra17.jpg" alt="Corbeau">
 
         <div class="work-info">
-            <h3>Corbeau</h3>
+            <h2>Corbeau</h2>
             <p>40 × 30 cm · 2024</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 19 -->
@@ -719,17 +636,14 @@
        data-category="figurativa"
        data-order="19">
 
-        <div class="work-image">
-            <img src="imagenes/obra19.jpg" alt="Las tres gracias">
-        </div>
+        <img src="imagenes/obra19.jpg" alt="Las tres gracias">
 
         <div class="work-info">
-            <h3>Las tres gracias</h3>
+            <h2>Las tres gracias</h2>
             <p>30 × 45 cm · 2024</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 20 -->
@@ -739,17 +653,14 @@
        data-category="figurativa"
        data-order="20">
 
-        <div class="work-image">
-            <img src="imagenes/obra20.jpg" alt="rrss">
-        </div>
+        <img src="imagenes/obra20.jpg" alt="rrss">
 
         <div class="work-info">
-            <h3>rrss</h3>
+            <h2>rrss</h2>
             <p>80 × 100 cm · 2024</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 21 -->
@@ -759,17 +670,14 @@
        data-category="figurativa"
        data-order="21">
 
-        <div class="work-image">
-            <img src="imagenes/obra21.jpg" alt="Gallos de pelea">
-        </div>
+        <img src="imagenes/obra21.jpg" alt="Gallos de pelea">
 
         <div class="work-info">
-            <h3>Gallos de pelea</h3>
+            <h2>Gallos de pelea</h2>
             <p>40 × 30 cm · 2025</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 22 -->
@@ -779,17 +687,14 @@
        data-category="abstracta"
        data-order="22">
 
-        <div class="work-image">
-            <img src="imagenes/obra22.jpg" alt="Océano IV">
-        </div>
+        <img src="imagenes/obra22.jpg" alt="Océano IV">
 
         <div class="work-info">
-            <h3>Océano IV</h3>
+            <h2>Océano IV</h2>
             <p>200 × 200 cm · 2026</p>
         </div>
 
     </a>
-
 
 
     <!-- OBRA 24 -->
@@ -799,28 +704,21 @@
        data-category="figurativa"
        data-order="24">
 
-        <div class="work-image">
-            <img src="imagenes/obra24.jpg" alt="Océano II">
-        </div>
+        <img src="imagenes/obra24.jpg" alt="Océano II">
 
         <div class="work-info">
-            <h3>Océano II</h3>
+            <h2>Océano II</h2>
             <p>50 × 70 cm · 2025</p>
         </div>
 
     </a>
 
-
 </main>
 
 
-
 <footer>
-
     © Pilar Casquero Gilabert
-
 </footer>
-
 
 
 <script>
@@ -834,11 +732,10 @@
 
         const gallery = document.getElementById("gallery");
 
-        const works = gallery.querySelectorAll(".work");
-        const pairs = gallery.querySelectorAll(".work-pair");
+        const items = Array.from(gallery.children);
 
 
-        /* Cambiar botón activo */
+        /* BOTÓN ACTIVO */
 
         document.querySelectorAll(".filter-button").forEach(function(btn) {
             btn.classList.remove("active");
@@ -847,44 +744,45 @@
         button.classList.add("active");
 
 
-        /* Obras individuales */
+        /* MOSTRAR / OCULTAR */
 
-        works.forEach(function(work) {
+        items.forEach(function(item) {
 
-            if (category === "todas") {
+            if (item.classList.contains("work-pair")) {
 
-                work.classList.remove("hidden");
+                const show =
+                    category === "todas" ||
+                    item.dataset.pairCategory === category;
+
+                item.classList.toggle("hidden", !show);
 
             } else {
 
-                if (work.dataset.category === category) {
-                    work.classList.remove("hidden");
-                } else {
-                    work.classList.add("hidden");
-                }
+                const show =
+                    category === "todas" ||
+                    item.dataset.category === category;
+
+                item.classList.toggle("hidden", !show);
 
             }
 
         });
 
 
-        /* Parejas */
+        /* ORDENAR SEGÚN DATA-ORDER */
 
-        pairs.forEach(function(pair) {
+        items.sort(function(a, b) {
 
-            if (category === "todas") {
+            return Number(a.dataset.order) - Number(b.dataset.order);
 
-                pair.classList.remove("hidden");
+        });
 
-            } else {
 
-                if (pair.dataset.pairCategory === category) {
-                    pair.classList.remove("hidden");
-                } else {
-                    pair.classList.add("hidden");
-                }
+        /* VOLVER A COLOCAR LOS ELEMENTOS ORDENADOS */
 
-            }
+        items.forEach(function(item) {
+
+            gallery.appendChild(item);
 
         });
 
@@ -892,6 +790,6 @@
 
 </script>
 
-
 </body>
 </html>
+```
