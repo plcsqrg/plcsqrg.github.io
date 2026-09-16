@@ -63,14 +63,10 @@
             opacity: 0.55;
         }
 
-        .instagram {
-            font-size: 1.15rem;
-        }
-
         .menu-button {
             display: none;
-            border: none;
             background: none;
+            border: none;
             font-size: 1.8rem;
             cursor: pointer;
             color: #1A1412;
@@ -80,20 +76,29 @@
 
         .page-header {
             text-align: center;
-            padding: 80px 20px 45px;
+            padding: 75px 20px 50px;
+        }
+
+        .page-header .small-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #C96F78;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
         .page-header h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            margin-bottom: 15px;
+            font-size: 3.4rem;
+            margin-bottom: 18px;
         }
 
         .page-header p {
             max-width: 650px;
             margin: 0 auto;
-            font-size: 1rem;
             line-height: 1.7;
+            font-size: 1rem;
         }
 
         /* FILTROS */
@@ -102,17 +107,19 @@
             display: flex;
             justify-content: center;
             gap: 12px;
-            margin: 0 auto 55px;
+            margin: 0 auto 45px;
             flex-wrap: wrap;
+            padding: 0 20px;
         }
 
         .filter-button {
-            border: 2px solid #C96F78;
             background: transparent;
+            border: 1px solid #C96F78;
             color: #1A1412;
             padding: 10px 22px;
             border-radius: 30px;
-            font-size: 0.9rem;
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -129,7 +136,10 @@
         .gallery {
             columns: 3 280px;
             column-gap: 24px;
-            padding: 0 5% 80px;
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-bottom: 80px;
         }
 
         .work {
@@ -140,15 +150,18 @@
             vertical-align: top;
         }
 
+        .work a {
+            display: block;
+        }
+
         .work img {
             display: block;
             width: 100%;
             height: auto;
-            border-radius: 2px;
             transition: transform 0.3s ease;
         }
 
-        .work:hover img {
+        .work img:hover {
             transform: scale(1.015);
         }
 
@@ -156,18 +169,19 @@
             padding-top: 12px;
         }
 
-        .work-info h2 {
+        .work-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.45rem;
+            font-size: 1.35rem;
+            font-weight: 700;
             margin-bottom: 4px;
         }
 
-        .work-info p {
-            font-size: 0.82rem;
-            opacity: 0.75;
+        .work-details {
+            font-size: 0.8rem;
+            color: #5F4F4B;
         }
 
-        /* PAREJAS DE OBRAS */
+        /* PAREJAS */
 
         .work-pair {
             display: inline-block;
@@ -208,7 +222,12 @@
         @media (max-width: 700px) {
 
             header {
-                height: 68px;
+                height: 70px;
+                padding: 0 6%;
+            }
+
+            .logo {
+                font-size: 1.25rem;
             }
 
             .menu-button {
@@ -218,19 +237,25 @@
             nav {
                 display: none;
                 position: absolute;
-                top: 68px;
+                top: 70px;
                 left: 0;
                 width: 100%;
                 background: #E8A3A8;
-                flex-direction: column;
-                gap: 20px;
-                padding: 25px;
                 border-bottom: 3px solid #C96F78;
-                z-index: 10;
+                flex-direction: column;
+                gap: 0;
+                z-index: 20;
             }
 
             nav.open {
                 display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                padding: 15px;
+                border-top: 1px solid rgba(201, 111, 120, 0.35);
             }
 
             .page-header {
@@ -238,21 +263,25 @@
             }
 
             .page-header h1 {
-                font-size: 3rem;
+                font-size: 2.7rem;
+            }
+
+            .page-header p {
+                font-size: 0.95rem;
+            }
+
+            .filters {
+                margin-bottom: 35px;
             }
 
             .gallery {
                 columns: 1;
-                padding: 0 7% 60px;
+                width: 88%;
             }
 
-            .filters {
+            .work,
+            .work-pair {
                 margin-bottom: 40px;
-                padding: 0 20px;
-            }
-
-            .filter-button {
-                padding: 9px 18px;
             }
         }
     </style>
@@ -262,499 +291,717 @@
 
 <header>
 
-    <div class="logo">
+    <a href="index.html" class="logo">
         Pilar Casquero Gilabert
-    </div>
+    </a>
 
     <button class="menu-button" onclick="toggleMenu()">☰</button>
 
-     <nav id="mainNav">
-
-            <a href="index.html">
-                Inicio
-            </a>
-
-            <a href="obras.html">
-                Obras
-            </a>
-
-            <a href="sobre-mi.html">
-                Sobre mí
-            </a>
-
-            <a href="encargos.html">
-                Encargos
-            </a>
-
-            <a href="contacto.html">
-                Contacto
-            </a>
-
-
-            <a href="https://www.instagram.com/pilarcasquerog/"
-               target="_blank"
-               aria-label="Instagram"
-               class="instagram">
-
-                <svg viewBox="0 0 24 24">
-
-                    <rect x="3"
-                          y="3"
-                          width="18"
-                          height="18"
-                          rx="5">
-                    </rect>
-
-                    <circle cx="12"
-                            cy="12"
-                            r="4">
-                    </circle>
-
-                    <circle cx="17.5"
-                            cy="6.5"
-                            r="1">
-                    </circle>
-
-                </svg>
-
-            </a>
+    <nav id="mainNav">
+        <a href="index.html">Inicio</a>
+        <a href="obras.html">Obras</a>
+        <a href="sobre-mi.html">Sobre mí</a>
+        <a href="encargos.html">Encargos</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="https://www.instagram.com/pilarcasquerog/" target="_blank">Instagram</a>
     </nav>
 
 </header>
 
 
-<section class="page-header">
+<main>
 
-    <h1>Obras</h1>
+    <section class="page-header">
 
-    <p>
-        Una selección de obras realizadas en diferentes momentos y procesos,
-        explorando la percepción, la memoria, las emociones y aquello que
-        permanece entre lo real y lo imaginado.
-    </p>
+        <div class="small-title">Pintura contemporánea</div>
 
-</section>
+        <h1>Obras</h1>
 
+        <p>
+            Una selección de obras realizadas entre 2023 y 2026,
+            donde exploro la percepción, la memoria, las emociones,
+            los sueños y aquello que permanece invisible.
+        </p>
 
-<div class="filters">
-
-    <button class="filter-button active"
-            onclick="filterWorks('todas', this)">
-        Todas
-    </button>
-
-    <button class="filter-button"
-            onclick="filterWorks('figurativa', this)">
-        Figurativas
-    </button>
-
-    <button class="filter-button"
-            onclick="filterWorks('abstracta', this)">
-        Abstractas
-    </button>
-
-</div>
+    </section>
 
 
-<main class="gallery" id="gallery">
+    <div class="filters">
 
-    <!-- OBRA 1 -->
+        <button class="filter-button active"
+                onclick="filterWorks('todas', this)">
+            Todas
+        </button>
 
-    <a href="obras/obra1.html"
-       class="work"
-       data-category="abstracta"
-       data-order="1">
+        <button class="filter-button"
+                onclick="filterWorks('figurativa', this)">
+            Figurativas
+        </button>
 
-        <img src="imagenes/obra1.jpg" alt="Océano III">
-
-        <div class="work-info">
-            <h2>Océano III</h2>
-            <p>300 × 200 cm · 2026</p>
-        </div>
-
-    </a>
-
-
-    <!-- OBRA 2 -->
-
-    <a href="obras/obra2.html"
-       class="work"
-       data-category="figurativa"
-       data-order="2">
-
-        <img src="imagenes/obra2.jpg" alt="Refracción de un pez">
-
-        <div class="work-info">
-            <h2>Refracción de un pez</h2>
-            <p>30 × 24 cm · 2025</p>
-        </div>
-
-    </a>
-
-
-    <!-- OBRA 3 -->
-
-    <a href="obras/obra3.html"
-       class="work"
-       data-category="figurativa"
-       data-order="3">
-
-        <img src="imagenes/obra3.jpg" alt="Un instant suspendu">
-
-        <div class="work-info">
-            <h2>Un instant suspendu</h2>
-            <p>30 × 24 cm · 2025</p>
-        </div>
-
-    </a>
-
-
-    <!-- OBRA 4 -->
-
-    <a href="obras/obra4.html"
-       class="work"
-       data-category="figurativa"
-       data-order="4">
-
-        <img src="imagenes/obra4.jpg" alt="Marguerites dans la cuisine">
-
-        <div class="work-info">
-            <h2>Marguerites dans la cuisine</h2>
-            <p>40 × 40 cm · 2024</p>
-        </div>
-
-    </a>
-
-
-    <!-- OBRA 5 -->
-
-    <a href="obras/obra5.html"
-       class="work"
-       data-category="figurativa"
-       data-order="5">
-
-        <img src="imagenes/obra5.jpg" alt="Jarra del pez">
-
-        <div class="work-info">
-            <h2>Jarra del pez</h2>
-            <p>80 × 60 cm · 2023</p>
-        </div>
-
-    </a>
-
-
-    <!-- OBRAS 6 Y 18 -->
-
-    <div class="work-pair"
-         data-pair-category="abstracta"
-         data-order="6">
-
-        <a href="obras/obra6.html"
-           class="work"
-           data-category="abstracta"
-           data-order="6">
-
-            <img src="imagenes/obra6.jpg" alt="Paisaje en formación (2/2)">
-
-            <div class="work-info">
-                <h2>Paisaje en formación (2/2)</h2>
-                <p>46 × 46 cm · 2025</p>
-            </div>
-
-        </a>
-
-
-        <a href="obras/obra18.html"
-           class="work"
-           data-category="abstracta"
-           data-order="18">
-
-            <img src="imagenes/obra18.jpg" alt="Paisaje en formación (1/2)">
-
-            <div class="work-info">
-                <h2>Paisaje en formación (1/2)</h2>
-                <p>46 × 46 cm · 2025</p>
-            </div>
-
-        </a>
+        <button class="filter-button"
+                onclick="filterWorks('abstracta', this)">
+            Abstractas
+        </button>
 
     </div>
 
 
-    <!-- OBRAS 7 Y 12 -->
-
-    <div class="work-pair"
-         data-pair-category="abstracta"
-         data-order="7">
-
-        <a href="obras/obra7.html"
-           class="work"
-           data-category="abstracta"
-           data-order="7">
-
-            <img src="imagenes/obra7.jpg" alt="Blanco (1/2)">
-
-            <div class="work-info">
-                <h2>Blanco (1/2)</h2>
-                <p>200 × 200 cm · 2026</p>
-            </div>
-
-        </a>
+    <section class="gallery" id="gallery">
 
 
-        <a href="obras/obra12.html"
-           class="work"
-           data-category="abstracta"
-           data-order="12">
+        <!-- OBRA 1 -->
 
-            <img src="imagenes/obra12.jpg" alt="Blanco (2/2)">
+        <article class="work"
+                 data-category="abstracta"
+                 data-order="1">
 
-            <div class="work-info">
-                <h2>Blanco (2/2)</h2>
-                <p>200 × 200 cm · 2026</p>
-            </div>
+            <a href="obras/obra1.html">
 
-        </a>
+                <img src="imagenes/obra1.jpg"
+                     alt="Océano III">
 
-    </div>
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Océano III
+                    </div>
+
+                    <div class="work-details">
+                        300 × 200 cm · 2026
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
 
 
-    <!-- OBRA 8 -->
+        <!-- OBRA 2 -->
 
-    <a href="obras/obra8.html"
-       class="work"
-       data-category="figurativa"
-       data-order="8">
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="2">
 
-        <img src="imagenes/obra8.jpg" alt="ECM">
+            <a href="obras/obra2.html">
 
-        <div class="work-info">
-            <h2>ECM</h2>
-            <p>80 × 65 cm · 2026</p>
+                <img src="imagenes/obra2.jpg"
+                     alt="Refracción de un pez">
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Refracción de un pez
+                    </div>
+
+                    <div class="work-details">
+                        30 × 24 cm · 2025
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <!-- OBRA 3 -->
+
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="3">
+
+            <a href="obras/obra3.html">
+
+                <img src="imagenes/obra3.jpg"
+                     alt="Un instant suspendu">
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Un instant suspendu
+                    </div>
+
+                    <div class="work-details">
+                        30 × 24 cm · 2025
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <!-- OBRA 4 -->
+
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="4">
+
+            <a href="obras/obra4.html">
+
+                <img src="imagenes/obra4.jpg"
+                     alt="Marguerites dans la cuisine">
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Marguerites dans la cuisine
+                    </div>
+
+                    <div class="work-details">
+                        40 × 40 cm · 2024
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <!-- OBRA 5 -->
+
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="5">
+
+            <a href="obras/obra5.html">
+
+                <img src="imagenes/obra5.jpg"
+                     alt="Jarra del pez">
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Jarra del pez
+                    </div>
+
+                    <div class="work-details">
+                        80 × 60 cm · 2023
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <!-- OBRAS 6 + 18 -->
+
+        <div class="work-pair"
+             data-pair-category="abstracta"
+             data-order="6">
+
+            <article class="work"
+                     data-category="abstracta"
+                     data-order="6">
+
+                <a href="obras/obra6.html">
+
+                    <img src="imagenes/obra6.jpg"
+                         alt="Paisaje en formación (2/2)">
+
+                    <div class="work-info">
+
+                        <div class="work-title">
+                            Paisaje en formación (2/2)
+                        </div>
+
+                        <div class="work-details">
+                            46 × 46 cm · 2025
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </article>
+
+
+            <article class="work"
+                     data-category="abstracta"
+                     data-order="18">
+
+                <a href="obras/obra18.html">
+
+                    <img src="imagenes/obra18.jpg"
+                         alt="Paisaje en formación (1/2)">
+
+                    <div class="work-info">
+
+                        <div class="work-title">
+                            Paisaje en formación (1/2)
+                        </div>
+
+                        <div class="work-details">
+                            46 × 46 cm · 2025
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </article>
+
         </div>
 
-    </a>
+
+        <!-- OBRAS 7 + 12 -->
+
+        <div class="work-pair"
+             data-pair-category="abstracta"
+             data-order="7">
+
+            <article class="work"
+                     data-category="abstracta"
+                     data-order="7">
+
+                <a href="obras/obra7.html">
+
+                    <img src="imagenes/obra7.jpg"
+                         alt="Blanco (1/2)">
+
+                    <div class="work-info">
+
+                        <div class="work-title">
+                            Blanco (1/2)
+                        </div>
+
+                        <div class="work-details">
+                            200 × 200 cm · 2026
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </article>
 
 
-    <!-- OBRA 9 -->
+            <article class="work"
+                     data-category="abstracta"
+                     data-order="12">
 
-    <a href="obras/obra9.html"
-       class="work"
-       data-category="figurativa"
-       data-order="9">
+                <a href="obras/obra12.html">
 
-        <img src="imagenes/obra9.jpg" alt="Parte de un todo">
+                    <img src="imagenes/obra12.jpg"
+                         alt="Blanco (2/2)">
 
-        <div class="work-info">
-            <h2>Parte de un todo</h2>
-            <p>80 × 60 cm · 2025</p>
+                    <div class="work-info">
+
+                        <div class="work-title">
+                            Blanco (2/2)
+                        </div>
+
+                        <div class="work-details">
+                            200 × 200 cm · 2026
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </article>
+
         </div>
 
-    </a>
 
+        <!-- OBRA 8 -->
 
-    <!-- OBRA 10 -->
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="8">
 
-    <a href="obras/obra10.html"
-       class="work"
-       data-category="figurativa"
-       data-order="10">
+            <a href="obras/obra8.html">
 
-        <img src="imagenes/obra10.jpg" alt="Tres haces">
+                <img src="imagenes/obra8.jpg"
+                     alt="ECM">
 
-        <div class="work-info">
-            <h2>Tres haces</h2>
-            <p>100 × 80 cm · 2025</p>
-        </div>
+                <div class="work-info">
 
-    </a>
+                    <div class="work-title">
+                        ECM
+                    </div>
 
+                    <div class="work-details">
+                        80 × 65 cm · 2026
+                    </div>
 
-    <!-- OBRA 11 -->
+                </div>
 
-    <a href="obras/obra11.html"
-       class="work"
-       data-category="figurativa"
-       data-order="11">
+            </a>
 
-        <img src="imagenes/obra11.jpg" alt="Cueva">
+        </article>
 
-        <div class="work-info">
-            <h2>Cueva</h2>
-            <p>100 × 140 cm · 2026</p>
-        </div>
 
-    </a>
+        <!-- OBRA 9 -->
 
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="9">
 
-    <!-- OBRA 13 -->
+            <a href="obras/obra9.html">
 
-    <a href="obras/obra13.html"
-       class="work"
-       data-category="abstracta"
-       data-order="13">
+                <img src="imagenes/obra9.jpg"
+                     alt="Parte de un todo">
 
-        <img src="imagenes/obra13.jpg" alt="Eléctrica">
+                <div class="work-info">
 
-        <div class="work-info">
-            <h2>Eléctrica</h2>
-            <p>195 × 130 cm · 2026</p>
-        </div>
+                    <div class="work-title">
+                        Parte de un todo
+                    </div>
 
-    </a>
+                    <div class="work-details">
+                        80 × 60 cm · 2025
+                    </div>
 
+                </div>
 
-    <!-- OBRA 14 -->
+            </a>
 
-    <a href="obras/obra14.html"
-       class="work"
-       data-category="figurativa"
-       data-order="14">
+        </article>
 
-        <img src="imagenes/obra14.jpg" alt="Mico">
 
-        <div class="work-info">
-            <h2>Mico</h2>
-            <p>60 × 80 cm · 2025</p>
-        </div>
+        <!-- OBRA 10 -->
 
-    </a>
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="10">
 
+            <a href="obras/obra10.html">
 
-    <!-- OBRA 15 -->
+                <img src="imagenes/obra10.jpg"
+                     alt="Tres haces">
 
-    <a href="obras/obra15.html"
-       class="work"
-       data-category="figurativa"
-       data-order="15">
+                <div class="work-info">
 
-        <img src="imagenes/obra15.jpg" alt="Océano I">
+                    <div class="work-title">
+                        Tres haces
+                    </div>
 
-        <div class="work-info">
-            <h2>Océano I</h2>
-            <p>120 × 60 cm · 2023</p>
-        </div>
+                    <div class="work-details">
+                        100 × 80 cm · 2025
+                    </div>
 
-    </a>
+                </div>
 
+            </a>
 
-    <!-- OBRA 16 -->
+        </article>
 
-    <a href="obras/obra16.html"
-       class="work"
-       data-category="figurativa"
-       data-order="16">
 
-        <img src="imagenes/obra16.jpg" alt="Pingüinos">
+        <!-- OBRA 11 -->
 
-        <div class="work-info">
-            <h2>Pingüinos</h2>
-            <p>80 × 60 cm · 2024</p>
-        </div>
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="11">
 
-    </a>
+            <a href="obras/obra11.html">
 
+                <img src="imagenes/obra11.jpg"
+                     alt="Cueva">
 
-    <!-- OBRA 17 -->
+                <div class="work-info">
 
-    <a href="obras/obra17.html"
-       class="work"
-       data-category="figurativa"
-       data-order="17">
+                    <div class="work-title">
+                        Cueva
+                    </div>
 
-        <img src="imagenes/obra17.jpg" alt="Corbeau">
+                    <div class="work-details">
+                        100 × 140 cm · 2026
+                    </div>
 
-        <div class="work-info">
-            <h2>Corbeau</h2>
-            <p>40 × 30 cm · 2024</p>
-        </div>
+                </div>
 
-    </a>
+            </a>
 
+        </article>
 
-    <!-- OBRA 19 -->
 
-    <a href="obras/obra19.html"
-       class="work"
-       data-category="figurativa"
-       data-order="19">
+        <!-- OBRA 13 -->
 
-        <img src="imagenes/obra19.jpg" alt="Las tres gracias">
+        <article class="work"
+                 data-category="abstracta"
+                 data-order="13">
 
-        <div class="work-info">
-            <h2>Las tres gracias</h2>
-            <p>30 × 45 cm · 2024</p>
-        </div>
+            <a href="obras/obra13.html">
 
-    </a>
+                <img src="imagenes/obra13.jpg"
+                     alt="Eléctrica">
 
+                <div class="work-info">
 
-    <!-- OBRA 20 -->
+                    <div class="work-title">
+                        Eléctrica
+                    </div>
 
-    <a href="obras/obra20.html"
-       class="work"
-       data-category="figurativa"
-       data-order="20">
+                    <div class="work-details">
+                        195 × 130 cm · 2026
+                    </div>
 
-        <img src="imagenes/obra20.jpg" alt="rrss">
+                </div>
 
-        <div class="work-info">
-            <h2>rrss</h2>
-            <p>80 × 100 cm · 2024</p>
-        </div>
+            </a>
 
-    </a>
+        </article>
 
 
-    <!-- OBRA 21 -->
+        <!-- OBRA 14 -->
 
-    <a href="obras/obra21.html"
-       class="work"
-       data-category="figurativa"
-       data-order="21">
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="14">
 
-        <img src="imagenes/obra21.jpg" alt="Gallos de pelea">
+            <a href="obras/obra14.html">
 
-        <div class="work-info">
-            <h2>Gallos de pelea</h2>
-            <p>40 × 30 cm · 2025</p>
-        </div>
+                <img src="imagenes/obra14.jpg"
+                     alt="Mico">
 
-    </a>
+                <div class="work-info">
 
+                    <div class="work-title">
+                        Mico
+                    </div>
 
-    <!-- OBRA 22 -->
+                    <div class="work-details">
+                        60 × 80 cm · 2025
+                    </div>
 
-    <a href="obras/obra22.html"
-       class="work"
-       data-category="abstracta"
-       data-order="22">
+                </div>
 
-        <img src="imagenes/obra22.jpg" alt="Océano IV">
+            </a>
 
-        <div class="work-info">
-            <h2>Océano IV</h2>
-            <p>200 × 200 cm · 2026</p>
-        </div>
+        </article>
 
-    </a>
 
+        <!-- OBRA 15 -->
 
-    <!-- OBRA 24 -->
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="15">
 
-    <a href="obras/obra24.html"
-       class="work"
-       data-category="figurativa"
-       data-order="24">
+            <a href="obras/obra15.html">
 
-        <img src="imagenes/obra24.jpg" alt="Océano II">
+                <img src="imagenes/obra15.jpg"
+                     alt="Océano I">
 
-        <div class="work-info">
-            <h2>Océano II</h2>
-            <p>50 × 70 cm · 2025</p>
-        </div>
+                <div class="work-info">
 
-    </a>
+                    <div class="work-title">
+                        Océano I
+                    </div>
+
+                    <div class="work-details">
+                        120 × 60 cm · 2023
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <!-- OBRA 16 -->
+
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="16">
+
+            <a href="obras/obra16.html">
+
+                <img src="imagenes/obra16.jpg"
+                     alt="Pingüinos">
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Pingüinos
+                    </div>
+
+                    <div class="work-details">
+                        80 × 60 cm · 2024
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <!-- OBRA 17 -->
+
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="17">
+
+            <a href="obras/obra17.html">
+
+                <img src="imagenes/obra17.jpg"
+                     alt="Corbeau">
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Corbeau
+                    </div>
+
+                    <div class="work-details">
+                        40 × 30 cm · 2024
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <!-- OBRA 19 -->
+
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="19">
+
+            <a href="obras/obra19.html">
+
+                <img src="imagenes/obra19.jpg"
+                     alt="Las tres gracias">
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Las tres gracias
+                    </div>
+
+                    <div class="work-details">
+                        30 × 45 cm · 2024
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <!-- OBRA 20 -->
+
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="20">
+
+            <a href="obras/obra20.html">
+
+                <img src="imagenes/obra20.jpg"
+                     alt="rrss">
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        rrss
+                    </div>
+
+                    <div class="work-details">
+                        80 × 100 cm · 2024
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <!-- OBRA 21 -->
+
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="21">
+
+            <a href="obras/obra21.html">
+
+                <img src="imagenes/obra21.jpg"
+                     alt="Gallos de pelea">
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Gallos de pelea
+                    </div>
+
+                    <div class="work-details">
+                        40 × 30 cm · 2025
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <!-- OBRA 22 -->
+
+        <article class="work"
+                 data-category="abstracta"
+                 data-order="22">
+
+            <a href="obras/obra22.html">
+
+                <img src="imagenes/obra22.jpg"
+                     alt="Océano IV">
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Océano IV
+                    </div>
+
+                    <div class="work-details">
+                        200 × 200 cm · 2026
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <!-- OBRA 24 -->
+
+        <article class="work"
+                 data-category="figurativa"
+                 data-order="24">
+
+            <a href="obras/obra24.html">
+
+                <img src="imagenes/obra24.jpg"
+                     alt="Océano II">
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Océano II
+                    </div>
+
+                    <div class="work-details">
+                        50 × 70 cm · 2025
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+    </section>
 
 </main>
 
@@ -778,7 +1025,7 @@
         const items = Array.from(gallery.children);
 
 
-        /* BOTÓN ACTIVO */
+        /* Cambiar botón activo */
 
         document.querySelectorAll(".filter-button").forEach(function(btn) {
             btn.classList.remove("active");
@@ -787,32 +1034,7 @@
         button.classList.add("active");
 
 
-        /* MOSTRAR / OCULTAR */
-
-        items.forEach(function(item) {
-
-            if (item.classList.contains("work-pair")) {
-
-                const show =
-                    category === "todas" ||
-                    item.dataset.pairCategory === category;
-
-                item.classList.toggle("hidden", !show);
-
-            } else {
-
-                const show =
-                    category === "todas" ||
-                    item.dataset.category === category;
-
-                item.classList.toggle("hidden", !show);
-
-            }
-
-        });
-
-
-        /* ORDENAR SEGÚN DATA-ORDER */
+        /* Ordenar todos los elementos según data-order */
 
         items.sort(function(a, b) {
 
@@ -821,7 +1043,7 @@
         });
 
 
-        /* VOLVER A COLOCAR LOS ELEMENTOS ORDENADOS */
+        /* Volver a colocarlos en el HTML */
 
         items.forEach(function(item) {
 
@@ -829,7 +1051,57 @@
 
         });
 
+
+        /* Mostrar u ocultar */
+
+        items.forEach(function(item) {
+
+            if (item.classList.contains("work-pair")) {
+
+                const showPair =
+                    category === "todas" ||
+                    item.dataset.pairCategory === category;
+
+                item.classList.toggle("hidden", !showPair);
+
+            } else {
+
+                const showWork =
+                    category === "todas" ||
+                    item.dataset.category === category;
+
+                item.classList.toggle("hidden", !showWork);
+
+            }
+
+        });
+
     }
+
+
+    /* Orden inicial */
+
+    window.addEventListener("DOMContentLoaded", function() {
+
+        const gallery = document.getElementById("gallery");
+
+        const items = Array.from(gallery.children);
+
+
+        items.sort(function(a, b) {
+
+            return Number(a.dataset.order) - Number(b.dataset.order);
+
+        });
+
+
+        items.forEach(function(item) {
+
+            gallery.appendChild(item);
+
+        });
+
+    });
 
 </script>
 
